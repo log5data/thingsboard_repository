@@ -1,0 +1,191 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : null,
+    "configuration" : null,
+    "debugMode" : true,
+    "externalId" : null,
+    "firstRuleNodeId" : null,
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "8530ea00-6f9f-11ea-82c8-230398f51544"
+    },
+    "name" : "Aggregate Alarm Counts",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 1,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 0,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : null,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 659,
+        "layoutY" : 226
+      },
+      "configuration" : {
+        "scope" : "SERVER_SCOPE",
+        "notifyDevice" : true,
+        "sendAttributesUpdatedNotification" : false,
+        "updateAttributesOnlyOnValueChange" : false
+      },
+      "configurationVersion" : 2,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "853b9860-6f9f-11ea-82c8-230398f51544"
+      },
+      "name" : "Save aggregated alarm count",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 81,
+        "layoutY" : 367
+      },
+      "configuration" : {
+        "alarmsCountMappings" : [ {
+          "target" : "alarmsCount",
+          "typesList" : null,
+          "severityList" : null,
+          "statusList" : null,
+          "latestInterval" : 0
+        }, {
+          "target" : "alarmsCountCriticalUnack2",
+          "typesList" : [ ],
+          "severityList" : [ "CRITICAL" ],
+          "statusList" : [ "ACTIVE_UNACK" ]
+        } ],
+        "countAlarmsForPropagationEntities" : true,
+        "outMsgType" : "POST_TELEMETRY_REQUEST"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "89ee5bc0-3cf0-11ec-83d3-77b7b1eedcae"
+      },
+      "name" : "testnew aGG",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.latest.alarm.TbAlarmsCountNodeV2"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 51,
+        "layoutY" : 225
+      },
+      "configuration" : {
+        "periodValue" : 1,
+        "periodTimeUnit" : "MINUTES",
+        "countAlarmsForChildEntities" : true,
+        "parentEntitiesQuery" : {
+          "type" : "relationsQuery",
+          "rootEntityId" : {
+            "entityType" : "ASSET",
+            "id" : "98542e80-88ea-11ea-82c8-230398f51544"
+          },
+          "relationsQuery" : {
+            "direction" : "FROM",
+            "maxLevel" : 1,
+            "filters" : [ {
+              "relationType" : "Contains",
+              "entityTypes" : [ "DEVICE", "ASSET" ]
+            } ]
+          },
+          "childRelationsQuery" : {
+            "direction" : "FROM",
+            "maxLevel" : 2,
+            "filters" : [ {
+              "relationType" : "Contains",
+              "entityTypes" : [ ]
+            } ]
+          }
+        },
+        "alarmsCountMappings" : [ {
+          "target" : "alarmsCount",
+          "typesList" : [ ],
+          "severityList" : [ ],
+          "statusList" : [ "ACTIVE_UNACK", "ACTIVE_ACK" ]
+        }, {
+          "target" : "alarmsCountCriticalUnack",
+          "typesList" : [ ],
+          "severityList" : [ "CRITICAL" ],
+          "statusList" : [ "ACTIVE_UNACK" ]
+        }, {
+          "target" : "alarmsCountMajorUnack",
+          "typesList" : [ ],
+          "severityList" : [ "MAJOR" ],
+          "statusList" : [ "ACTIVE_UNACK" ]
+        }, {
+          "target" : "alarmsCountMajorAck",
+          "typesList" : [ ],
+          "severityList" : [ "MAJOR" ],
+          "statusList" : [ "ACTIVE_ACK" ]
+        }, {
+          "target" : "alarmsCountCriticalAck",
+          "typesList" : [ ],
+          "severityList" : [ "CRITICAL" ],
+          "statusList" : [ "ACTIVE_ACK" ]
+        } ],
+        "outMsgType" : "POST_TELEMETRY_REQUEST"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ddad95f0-9a30-11ea-82c8-230398f51544"
+      },
+      "name" : "Aggregate Alarm Counts per Device based on relations",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.latest.alarm.TbAlarmsCountNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 352,
+        "layoutY" : 226
+      },
+      "configuration" : {
+        "jsScript" : "var newMsgType = 'POST_ATTRIBUTES_REQUEST';\nreturn {msg: msg, metadata: metadata, msgType: newMsgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "fdfd1440-9646-11ea-82c8-230398f51544"
+      },
+      "name" : "Convert Post Telemetry to Post Attributes",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

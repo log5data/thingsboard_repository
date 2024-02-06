@@ -1,0 +1,25 @@
+{
+  "entityType" : "CONVERTER",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : {
+      "decoder" : null,
+      "encoder" : "var data = {\r\n        downlinks: [{\r\n            f_port: 2,\r\n            confirmed: false,\r\n            frm_payload: btoa(msg.version),\r\n            priority: \"NORMAL\"\r\n        }]\r\n    };\r\n\r\nvar result = {\r\n    contentType: \"JSON\",\r\n    data: JSON.stringify(data),\r\n    metadata: {\r\n        devId: 'soundsensor'\r\n    }\r\n\r\n};\r\nreturn result;"
+    },
+    "debugMode" : false,
+    "edgeTemplate" : false,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "CONVERTER",
+      "id" : "4d0d3f70-692e-11ee-b451-6be2d47cc191"
+    },
+    "name" : "Milesight Sound Sensor WS-302 Down",
+    "type" : "DOWNLINK"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

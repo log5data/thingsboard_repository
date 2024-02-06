@@ -1,0 +1,262 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : null,
+    "configuration" : null,
+    "debugMode" : true,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "b8da5070-6483-11ea-82c8-230398f51544"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "b8d372a0-6483-11ea-82c8-230398f51544"
+    },
+    "name" : "Check Downlink Needed",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 6,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 8,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 5,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 1,
+      "type" : "True"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 4,
+      "type" : "False"
+    }, {
+      "fromIndex" : 8,
+      "toIndex" : 6,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 8,
+      "toIndex" : 6,
+      "type" : "False"
+    }, {
+      "fromIndex" : 8,
+      "toIndex" : 7,
+      "type" : "True"
+    } ],
+    "firstNodeIndex" : 0,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "layoutX" : 277,
+        "layoutY" : 151
+      },
+      "configuration" : {
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "downlinkPending" ],
+        "latestTsKeyNames" : [ ],
+        "tellFailureIfAbsent" : true,
+        "fetchTo" : "METADATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b8da5070-6483-11ea-82c8-230398f51544"
+      },
+      "name" : "Get downlinkPending status",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 617,
+        "layoutY" : 515
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg;\n\nnewMsg = {\n    \"downlinkPending\":false\n};\n\n\nreturn {msg: newMsg, metadata: metadata, msgType: \"POST_ATTRIBUTES_REQUEST\"};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b8da9e90-6483-11ea-82c8-230398f51544"
+      },
+      "name" : "Update downlinkPending Attribute",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 1004,
+        "layoutY" : 506
+      },
+      "configuration" : {
+        "scope" : "SERVER_SCOPE",
+        "notifyDevice" : true,
+        "sendAttributesUpdatedNotification" : false,
+        "updateAttributesOnlyOnValueChange" : false
+      },
+      "configurationVersion" : 2,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b8daecb0-6483-11ea-82c8-230398f51544"
+      },
+      "name" : "Update Downlink Schedule",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 782,
+        "layoutY" : 336
+      },
+      "configuration" : {
+        "integrationId" : "e91e6f80-6e26-11ea-82c8-230398f51544"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b8db3ad0-6483-11ea-82c8-230398f51544"
+      },
+      "name" : "Laird Downlink",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.integration.TbIntegrationDownlinkNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 595,
+        "layoutY" : 257
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg;\nvar d = new Date();\nvar y = d.getUTCFullYear();\nvar ystr = y.toString();\nvar year = ystr.substr(2, 3);\n\nnewMsg = {\n\"MsgType\": 2,\n\"Options\": 0,\n\"RTC_Year\": parseInt(year),\n\"RTC_Month\": d.getUTCMonth() + 1,\n\"RTC_Day\": d.getUTCDay(),\n\"RTC_Hours\": d.getUTCHours(),\n\"RTC_Minutes\": d.getUTCMinutes(),\n\"RTC_Seconds\": d.getUTCSeconds(),\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b8db88f0-6483-11ea-82c8-230398f51544"
+      },
+      "name" : "Build Laird Downlink",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 992,
+        "layoutY" : 399
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg;\n\nnewMsg = {\n    \"downlinkPending\":true\n};\n\n\nreturn {msg: newMsg, metadata: metadata, msgType: \"POST_ATTRIBUTES_REQUEST\"};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b8dbfe20-6483-11ea-82c8-230398f51544"
+      },
+      "name" : "Update downlinkPending Attribute",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 580,
+        "layoutY" : 135
+      },
+      "configuration" : {
+        "jsScript" : "return 'Incoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b8dc4c40-6483-11ea-82c8-230398f51544"
+      },
+      "name" : "no downlinkPending",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbLogNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 367,
+        "layoutY" : 382
+      },
+      "configuration" : {
+        "jsScript" : "if (metadata.ss_downlinkPending === true)\nreturn true;\nelse\nreturn false;\n"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b8dc9a60-6483-11ea-82c8-230398f51544"
+      },
+      "name" : "check if downlink pending",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 276,
+        "layoutY" : 274
+      },
+      "configuration" : {
+        "jsScript" : "if (msg.Options == \"Inform Server to send UT to sensor in the next downlink transmission\") return true;\nelse return false;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b8dce880-6483-11ea-82c8-230398f51544"
+      },
+      "name" : "check Options in Message",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

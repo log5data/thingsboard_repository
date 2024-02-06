@@ -1,0 +1,43 @@
+{
+  "entityType" : "ROLE",
+  "entity" : {
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "13814000-1dd2-11b2-8080-808080808080"
+    },
+    "externalId" : null,
+    "name" : "Tenant Admin Limited",
+    "permissions" : {
+      "CUSTOMER" : [ "ALL" ],
+      "CUSTOMER_GROUP" : [ "ALL" ],
+      "USER" : [ "ALL" ],
+      "USER_GROUP" : [ "ALL" ],
+      "DASHBOARD" : [ "ALL" ],
+      "DASHBOARD_GROUP" : [ "ALL" ],
+      "PROFILE" : [ "ALL" ],
+      "TENANT" : [ "ALL" ],
+      "ROLE" : [ "ALL" ],
+      "BLOB_ENTITY" : [ "ALL" ],
+      "GROUP_PERMISSION" : [ "ALL" ],
+      "ALARM" : [ "ALL" ],
+      "ASSET" : [ "ALL" ],
+      "ASSET_GROUP" : [ "ALL" ],
+      "DEVICE" : [ "ALL" ],
+      "DEVICE_GROUP" : [ "ALL" ],
+      "AUDIT_LOG" : [ "READ" ],
+      "WIDGETS_BUNDLE" : [ "READ" ],
+      "WIDGET_TYPE" : [ "READ" ]
+    },
+    "type" : "GENERIC",
+    "additionalInfo" : null,
+    "id" : {
+      "entityType" : "ROLE",
+      "id" : "1117e2e0-b0c7-11ea-b0d9-af9b08aaa322"
+    },
+    "ownerId" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

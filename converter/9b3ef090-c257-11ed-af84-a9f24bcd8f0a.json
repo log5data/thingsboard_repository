@@ -1,0 +1,25 @@
+{
+  "entityType" : "CONVERTER",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : {
+      "decoder" : null,
+      "encoder" : "// Encode downlink data from incoming Rule Engine message\r\n\r\n// msg - JSON message payload downlink message json\r\n// msgType - type of message, for ex. 'ATTRIBUTES_UPDATED', 'POST_TELEMETRY_REQUEST', etc.\r\n// metadata - list of key-value pairs with additional data about the message\r\n// integrationMetadata - list of key-value pairs with additional data defined in Integration executing this converter\r\n\r\n/** Encoder **/\r\n\r\nvar data = {};\r\nvar decoded_payload = {};\r\n\r\nvar downlinks = [];\r\n// Process data from incoming message and metadata\r\n\r\ndecoded_payload.reportingFreq = msg.reportingFreq;\r\ndecoded_payload.wmod = msg.wmod;\r\ndecoded_payload.citemp = msg.citemp;\r\ndecoded_payload.poll_sensor_value = msg.poll_sensor_value;\r\ndecoded_payload.start_ts = msg.start_ts;\r\ndecoded_payload.end_ts = msg.end_ts;\r\ndecoded_payload.uplink_interval = msg.uplink_interval;\r\n\r\nvar application_ids = {\r\n    application_id: \"dragino-lht65\"\r\n};\r\n\r\nvar end_device_ids = {\r\n    device_id:metadata.devId,\r\n    application_ids: application_ids\r\n};\r\n\r\ndownlinks[0] = {\r\n    f_port: 100,\r\n    decoded_payload:decoded_payload,\r\n    priority: \"NORMAL\",\r\n    confirmed:true\r\n};\r\n\r\ndata = {\r\n//    end_device_ids: end_device_ids,\r\n    downlinks: downlinks\r\n};\r\n\r\nvar result = {\r\n\r\n    // downlink data content type: JSON, TEXT or BINARY (base64 format)\r\n    contentType: \"JSON\",\r\n    data: JSON.stringify(data),\r\n\r\n    // Optional metadata object presented in key/value format\r\n    metadata: {\r\n            topic: \"v3/dragino-lht65/devices/\" + metadata.devId + \"/down/replace\"\r\n    }\r\n\r\n};\r\n\r\nreturn result;"
+    },
+    "debugMode" : true,
+    "edgeTemplate" : false,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "CONVERTER",
+      "id" : "9b3ef090-c257-11ed-af84-a9f24bcd8f0a"
+    },
+    "name" : "Dragino-lht65-Downlink",
+    "type" : "DOWNLINK"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

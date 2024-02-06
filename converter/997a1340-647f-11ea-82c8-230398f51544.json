@@ -1,0 +1,24 @@
+{
+  "entityType" : "CONVERTER",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : {
+      "decoder" : "var data = decodeToJson(payload);\nvar deviceName = data.end_device_ids.device_id;\nvar deviceType = 'air-pressure';\n\nvar result = {\n    deviceName: deviceName,\n    deviceType: deviceType,\n    telemetry: {\n         temperature: data.uplink_message.decoded_payload.DecodeDataObj.environment.temperature,\n         gasResistance:data.uplink_message.decoded_payload.DecodeDataObj.environment.gasResistance,\n         battery_voltage:data.uplink_message.decoded_payload.DecodeDataObj.battery_voltage,\n         airPressure:data.uplink_message.decoded_payload.DecodeDataObj.environment.airPressure,\n         humidity:data.uplink_message.decoded_payload.DecodeDataObj.environment.humidity\n    }\n};\n\nfunction decodeToString(payload) {\n    return String.fromCharCode.apply(String, payload);\n}\n\nfunction decodeToJson(payload) {\n    var str = decodeToString(payload);\n    var data = JSON.parse(str);\n    return data;\n}\n\nreturn result;"
+    },
+    "debugMode" : false,
+    "edgeTemplate" : false,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "CONVERTER",
+      "id" : "997a1340-647f-11ea-82c8-230398f51544"
+    },
+    "name" : "RAK_Wireless-TTS",
+    "type" : "UPLINK"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

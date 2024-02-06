@@ -1,0 +1,218 @@
+{
+  "entityType" : "ASSET",
+  "entity" : {
+    "additionalInfo" : null,
+    "assetProfileId" : {
+      "entityType" : "ASSET_PROFILE",
+      "id" : "2fae3ab0-bad2-11ee-902e-d7d4d78cf384"
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "ASSET",
+      "id" : "30c2d2e0-6ae9-11ea-82c8-230398f51544"
+    },
+    "label" : "Delta of 5&6",
+    "name" : "A511",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "type" : "cabinet"
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "30c2d2e0-6ae9-11ea-82c8-230398f51544"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "aType",
+      "lastUpdateTs" : 1590771631310,
+      "longValue" : null,
+      "strValue" : "cabinet"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCount",
+      "lastUpdateTs" : 1592249166924,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountCriticalAck",
+      "lastUpdateTs" : 1592249166924,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountCriticalUnack",
+      "lastUpdateTs" : 1592249166924,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountMajorAck",
+      "lastUpdateTs" : 1592249166924,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountMajorUnack",
+      "lastUpdateTs" : 1592249166924,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "criticalDeltaHumidityDiff",
+      "lastUpdateTs" : 1590771631310,
+      "longValue" : 10,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "criticalDeltaTempDiff",
+      "lastUpdateTs" : 1590771631310,
+      "longValue" : 3,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "deltaHumidCriticalDiff",
+      "lastUpdateTs" : 1590771631310,
+      "longValue" : 5,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "deltaHumidHigh",
+      "lastUpdateTs" : 1590771631310,
+      "longValue" : 99,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "deltaHumidLow",
+      "lastUpdateTs" : 1590771631310,
+      "longValue" : 99,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "deltaHumidityCriticalDiff",
+      "lastUpdateTs" : 1590771631310,
+      "longValue" : 5,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "deltaHumidityHigh",
+      "lastUpdateTs" : 1590771631310,
+      "longValue" : 99,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "deltaHumidityHighLow",
+      "lastUpdateTs" : 1590771631310,
+      "longValue" : 99,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "deltaHumidityLow",
+      "lastUpdateTs" : 1590771631310,
+      "longValue" : -5,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "deltaTempCriticalDiff",
+      "lastUpdateTs" : 1590771631310,
+      "longValue" : 5,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "deltaTempHigh",
+      "lastUpdateTs" : 1590771631310,
+      "longValue" : 99,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "deltaTempLow",
+      "lastUpdateTs" : 1590771631310,
+      "longValue" : -10,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "description",
+      "lastUpdateTs" : 1590771631310,
+      "longValue" : null,
+      "strValue" : "Delta cabinet Asset - Sensor 5 & 6"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "notifyThreshold",
+      "lastUpdateTs" : 1590771631310,
+      "longValue" : 1,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 0.37,
+      "jsonValue" : null,
+      "key" : "xPos",
+      "lastUpdateTs" : 1590771631310,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 0.55,
+      "jsonValue" : null,
+      "key" : "yPos",
+      "lastUpdateTs" : 1590771631310,
+      "longValue" : null,
+      "strValue" : null
+    } ]
+  }
+}

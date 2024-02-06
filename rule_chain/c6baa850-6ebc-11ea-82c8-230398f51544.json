@@ -1,0 +1,350 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : null,
+    "configuration" : null,
+    "debugMode" : true,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "c6cc3480-6ebc-11ea-82c8-230398f51544"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "c6baa850-6ebc-11ea-82c8-230398f51544"
+    },
+    "name" : "Delta AirPressure",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 1,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 10,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 8,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 11,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 9,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 5,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 5,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 8,
+      "toIndex" : 6,
+      "type" : "Outside"
+    }, {
+      "fromIndex" : 8,
+      "toIndex" : 7,
+      "type" : "Inside"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 0,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 10,
+      "toIndex" : 3,
+      "type" : "True"
+    } ],
+    "firstNodeIndex" : 2,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "layoutX" : 709,
+        "layoutY" : 494
+      },
+      "configuration" : {
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "deltaPressureOffset" ],
+        "latestTsKeyNames" : [ ],
+        "tellFailureIfAbsent" : true,
+        "getLatestValueWithTs" : false,
+        "fetchTo" : "METADATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "8af79ca0-955a-11ea-82c8-230398f51544"
+      },
+      "name" : "Fetch deltaPressureOffset",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 1016,
+        "layoutY" : 496
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\nvar ip = {};\nvar op = {};\n//newMsg.deltaPressure = null;\nvar timeDiff;\n\n\nif (typeof metadata.insidePressure !== 'undefined' && typeof metadata.outsidePressure !== 'undefined'){\n    ip = JSON.parse(metadata.insidePressure);\n    op = JSON.parse(metadata.outsidePressure);\n    \nvar offset = parseInt(metadata.ss_deltaPressureOffset);\n\n    timeDiff = Math.abs(ip[0].ts - op[0].ts);\n    if (timeDiff < 180000) {\n        newMsg.deltaPressure = parseFloat(ip[0].value - op[0].value + offset).toFixed(2);\n        return {msg:newMsg, metadata: metadata, msgType: msgType};\n    }\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c6cbbf50-6ebc-11ea-82c8-230398f51544"
+      },
+      "name" : "Calculate Pressure Differential",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 86,
+        "layoutY" : 270
+      },
+      "configuration" : {
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "doorPosition" ],
+        "latestTsKeyNames" : [ ],
+        "tellFailureIfAbsent" : true,
+        "fetchTo" : "METADATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c6cc3480-6ebc-11ea-82c8-230398f51544"
+      },
+      "name" : "get Device doorPosition",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 1139,
+        "layoutY" : 589
+      },
+      "configuration" : {
+        "defaultTTL" : 0
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c6cca9b0-6ebc-11ea-82c8-230398f51544"
+      },
+      "name" : "Save Diff Pressure on Door",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 1207,
+        "layoutY" : 272
+      },
+      "configuration" : {
+        "defaultTTL" : 0
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c6cdbb20-6ebc-11ea-82c8-230398f51544"
+      },
+      "name" : "Save inside/outside pressure for room",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 880,
+        "layoutY" : 272
+      },
+      "configuration" : {
+        "originatorSource" : "RELATED",
+        "relationsQuery" : {
+          "direction" : "TO",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ "ASSET" ]
+          } ],
+          "fetchLastLevelOnly" : false
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c6ce0940-6ebc-11ea-82c8-230398f51544"
+      },
+      "name" : "Change Originator to Asset",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 606,
+        "layoutY" : 348
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\r\n               \r\nnewMsg.outsidePressure = msg.airPressure;\r\n               \r\nreturn {\r\n    msg: newMsg, \r\n    metadata: metadata,\r\n    msgType: msgType\r\n    };"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c6ce7e70-6ebc-11ea-82c8-230398f51544"
+      },
+      "name" : "Change to outsidePressure",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 602,
+        "layoutY" : 197
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\r\n               \r\nnewMsg.insidePressure = msg.airPressure;\r\n               \r\nreturn {\r\n    msg: newMsg, \r\n    metadata: metadata,\r\n    msgType: msgType\r\n    };"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c6cecc90-6ebc-11ea-82c8-230398f51544"
+      },
+      "name" : "Change to insidePressure",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 353,
+        "layoutY" : 270
+      },
+      "configuration" : {
+        "jsScript" : "\nfunction nextRelation(metadata, msg) {\n    if (typeof metadata.ss_doorPosition != 'undefined')\n    \tif (metadata.ss_doorPosition === 'inside') {\n    \t\treturn ['Inside'];\n    \t} else if (metadata.ss_doorPosition === 'outside')\n    \t\treturn ['Outside'];\n    }\n        \n    return nextRelation(metadata, msg);"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c6cf1ab0-6ebc-11ea-82c8-230398f51544"
+      },
+      "name" : "Switch by doorPosition",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 404,
+        "layoutY" : 494
+      },
+      "configuration" : {
+        "startInterval" : 5,
+        "endInterval" : 1,
+        "startIntervalPattern" : "",
+        "endIntervalPattern" : "",
+        "useMetadataIntervalPatterns" : false,
+        "startIntervalTimeUnit" : "MINUTES",
+        "endIntervalTimeUnit" : "MILLISECONDS",
+        "fetchMode" : "ALL",
+        "orderBy" : "DESC",
+        "latestTsKeyNames" : [ "insidePressure", "outsidePressure" ]
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c6cf68d0-6ebc-11ea-82c8-230398f51544"
+      },
+      "name" : "fetch inside/outside pressure",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetTelemetryNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 1276,
+        "layoutY" : 496
+      },
+      "configuration" : {
+        "messageNames" : [ "deltaPressure" ],
+        "metadataNames" : [ ],
+        "checkAllKeys" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4a7816a0-d59c-11ea-b8b6-f3024ac1a0a4"
+      },
+      "name" : "deltaPressure exists",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbCheckMessageNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 1298,
+        "layoutY" : 679,
+        "ruleChainNodeId" : "rule-chain-node-13"
+      },
+      "configuration" : {
+        "ruleChainId" : "73e83c20-3101-11eb-8887-e94257e8a11b"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0afc58a0-b6e5-11ee-b88b-791a828c489c"
+      },
+      "name" : "New Incoming Telemetry Handling",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

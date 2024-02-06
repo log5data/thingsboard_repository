@@ -1,0 +1,234 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : null,
+    "configuration" : null,
+    "debugMode" : false,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "73eef2e0-3101-11eb-8887-e94257e8a11b"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "73e83c20-3101-11eb-8887-e94257e8a11b"
+    },
+    "name" : "New Incoming Telemetry Handling",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 5,
+      "type" : "Asset"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 6,
+      "type" : "Device"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 4,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 1,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 1,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 0,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 0,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 2,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 753,
+        "layoutY" : 370
+      },
+      "configuration" : {
+        "version" : 0
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "73ee0880-3101-11eb-8887-e94257e8a11b"
+      },
+      "name" : "Device or Asset",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbOriginatorTypeSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 401,
+        "layoutY" : 391
+      },
+      "configuration" : {
+        "dataMapping" : {
+          "emailNotify" : "emailNotify",
+          "textNotify" : "textNotify",
+          "slackNotify" : "slackNotify",
+          "slackUrl" : "cu_slackUrl"
+        },
+        "dataToFetch" : "ATTRIBUTES",
+        "fetchTo" : "METADATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "73ee7db0-3101-11eb-8887-e94257e8a11b"
+      },
+      "name" : "Add Customer Notify Addresses",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetCustomerAttributeNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 274,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : false,
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "major_text", "major_email", "critical_text", "critical_email", "notifyThreshold", "tempHigh", "tempLow", "humidityHigh", "humidityLow", "deltaTempHigh", "deltaTempLow", "deltaHumidityHigh", "deltaHumidityLow", "deltaPressureLow", "tempCriticalDiff", "humidityCriticalDiff", "deltaTempCriticalDiff", "deltaHumidityCriticalDiff", "deltaPressureCriticalDiff", "dustHigh", "dustCriticalDiff", "diffPressureLow", "diffPressureCriticalDiff", "slackMajor", "slackCritical", "slackUrl" ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : null,
+        "fetchTo" : "METADATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "73eef2e0-3101-11eb-8887-e94257e8a11b"
+      },
+      "name" : "Add Device/Asset Thresholds",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 329,
+        "layoutY" : 270
+      },
+      "configuration" : {
+        "dataMapping" : {
+          "label" : "label"
+        },
+        "fetchTo" : "METADATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "73ef4100-3101-11eb-8887-e94257e8a11b"
+      },
+      "name" : "Add label",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetOriginatorFieldsNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 486,
+        "layoutY" : 482
+      },
+      "configuration" : {
+        "dataMapping" : {
+          "emailNotify" : "tenantEmailNotify",
+          "textNotify" : "tenantTextNotify"
+        },
+        "dataToFetch" : "ATTRIBUTES",
+        "fetchTo" : "METADATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "73ef8f20-3101-11eb-8887-e94257e8a11b"
+      },
+      "name" : "Add Tenant Notify Address",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetTenantAttributeNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 1043,
+        "layoutY" : 432,
+        "ruleChainNodeId" : "rule-chain-node-8"
+      },
+      "configuration" : {
+        "ruleChainId" : "74c728c0-6ed5-11ea-82c8-230398f51544"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0a8e7ba0-b6e5-11ee-b88b-791a828c489c"
+      },
+      "name" : "Delta Threshold Alarm Handling",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 1043,
+        "layoutY" : 319,
+        "ruleChainNodeId" : "rule-chain-node-7"
+      },
+      "configuration" : {
+        "ruleChainId" : "3c0a04f0-3101-11eb-8887-e94257e8a11b"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0afa83e0-b6e5-11ee-b88b-791a828c489c"
+      },
+      "name" : "New Threshold Alarm Handling",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

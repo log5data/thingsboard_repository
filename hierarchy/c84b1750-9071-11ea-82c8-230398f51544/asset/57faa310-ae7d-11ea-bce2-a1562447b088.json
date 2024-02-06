@@ -1,0 +1,194 @@
+{
+  "entityType" : "ASSET",
+  "entity" : {
+    "additionalInfo" : null,
+    "assetProfileId" : {
+      "entityType" : "ASSET_PROFILE",
+      "id" : "2fab2d70-bad2-11ee-902e-d7d4d78cf384"
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "ASSET",
+      "id" : "57faa310-ae7d-11ea-bce2-a1562447b088"
+    },
+    "label" : "DH-A",
+    "name" : "DoorA2",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "type" : "door"
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "57faa310-ae7d-11ea-bce2-a1562447b088"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "aType",
+      "lastUpdateTs" : 1592865697213,
+      "longValue" : null,
+      "strValue" : "door"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCount",
+      "lastUpdateTs" : 1605208239835,
+      "longValue" : 1,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountCriticalAck",
+      "lastUpdateTs" : 1605208239835,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountCriticalUnack",
+      "lastUpdateTs" : 1605208239835,
+      "longValue" : 1,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountMajorAck",
+      "lastUpdateTs" : 1605208239835,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountMajorUnack",
+      "lastUpdateTs" : 1605208239835,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "critical_email",
+      "lastUpdateTs" : 1592865697213,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "critical_text",
+      "lastUpdateTs" : 1592865697213,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "deltaPressureCriticalDiff",
+      "lastUpdateTs" : 1592865697213,
+      "longValue" : 1,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "deltaPressureLow",
+      "lastUpdateTs" : 1592865697213,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "deltaPressureOffset",
+      "lastUpdateTs" : 1592935047996,
+      "longValue" : -6,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "description",
+      "lastUpdateTs" : 1592865697213,
+      "longValue" : null,
+      "strValue" : "Door @ XXX Location"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityTimeout",
+      "lastUpdateTs" : 1592865697213,
+      "longValue" : 5400000,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "major_email",
+      "lastUpdateTs" : 1592865697213,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "major_text",
+      "lastUpdateTs" : 1592865697213,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "notifyThreshold",
+      "lastUpdateTs" : 1592865697213,
+      "longValue" : 1,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "pressureReportingFreq",
+      "lastUpdateTs" : 1592926699409,
+      "longValue" : 30,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 0.24,
+      "jsonValue" : null,
+      "key" : "xPos",
+      "lastUpdateTs" : 1592865697213,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 0.6,
+      "jsonValue" : null,
+      "key" : "yPos",
+      "lastUpdateTs" : 1592865697213,
+      "longValue" : null,
+      "strValue" : null
+    } ]
+  }
+}

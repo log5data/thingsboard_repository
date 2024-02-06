@@ -1,0 +1,160 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : true,
+    "externalId" : null,
+    "firstRuleNodeId" : null,
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "c58d26d0-c795-11ed-af84-a9f24bcd8f0a"
+    },
+    "name" : "Dragino Alarm Mode",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 1,
+      "toIndex" : 0,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 1,
+      "type" : "dragino"
+    } ],
+    "firstNodeIndex" : null,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 977,
+        "layoutY" : 488
+      },
+      "configuration" : {
+        "integrationId" : "24a28a51-b8ca-11ed-82b3-7f27f2c70179"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d1736a90-c795-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Update Dragino Device",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.integration.TbIntegrationDownlinkNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 785,
+        "layoutY" : 413
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\nif (msg.status === \"ACTIVE_UNACK\") {\n    //newMsg.wmod = 0; //disable sensor alarm mode\n    newMsg.citemp = 60; //set alarm uplinks frequency to 60 minutes\n}\nif (msg.status === \"CLEARED_UNACK\" || msg.status === \"CLEARED_ACK\") {\n    //newMsg.wmod = 1; //enable sensor alarm mode\n    newMsg.citemp = 1; //set alarm uplinks frequency to 1 minutes\n}\nvar newMetadata = {\n    \"devId\": metadata.originatorName\n};\nreturn {msg: newMsg, metadata: newMetadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d1742de0-c795-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Build Dragino Dwonlink",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 407,
+        "layoutY" : 276
+      },
+      "configuration" : {
+        "dataMapping" : {
+          "name" : "originatorName",
+          "type" : "originatorType"
+        },
+        "fetchTo" : "METADATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d1747c00-c795-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Get devId",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetOriginatorFieldsNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 228,
+        "layoutY" : 204
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : false,
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "manufacturer" ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : null,
+        "fetchTo" : "METADATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d174a310-c795-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Get Manufacturer",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 577,
+        "layoutY" : 344
+      },
+      "configuration" : {
+        "jsScript" : "switch (metadata.ss_manufacturer){\n    case \"Laird\":\n        return \"laird\";\n    case \"Kona\":\n        return \"kona\";\n    case \"Polysense\":\n        return \"polysense\";\n    case \"Dragino\":\n        return \"dragino\";\n    default:\n        return \"none\";\n}"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d174ca20-c795-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Switch on Device Manufacturer",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

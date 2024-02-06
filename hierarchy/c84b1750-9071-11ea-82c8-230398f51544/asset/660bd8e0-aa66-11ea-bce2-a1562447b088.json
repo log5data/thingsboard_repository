@@ -1,0 +1,252 @@
+{
+  "entityType" : "ASSET",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : "Anderson test"
+    },
+    "assetProfileId" : {
+      "entityType" : "ASSET_PROFILE",
+      "id" : "2faadf50-bad2-11ee-902e-d7d4d78cf384"
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "ASSET",
+      "id" : "660bd8e0-aa66-11ea-bce2-a1562447b088"
+    },
+    "label" : "3. MTL1 - Emergency sensors",
+    "name" : "MTL1 - Emergency sensors",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "type" : "room"
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "98542e80-88ea-11ea-82c8-230398f51544"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "660bd8e0-aa66-11ea-bce2-a1562447b088"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "660bd8e0-aa66-11ea-bce2-a1562447b088"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "660bd8e0-aa66-11ea-bce2-a1562447b088"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "91c0b3a0-93cf-11ea-82c8-230398f51544"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "660bd8e0-aa66-11ea-bce2-a1562447b088"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "921cf9e0-93ce-11ea-82c8-230398f51544"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "660bd8e0-aa66-11ea-bce2-a1562447b088"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "dc26d950-6ae5-11ea-82c8-230398f51544"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "660bd8e0-aa66-11ea-bce2-a1562447b088"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "179b6ac0-6af3-11ea-82c8-230398f51544"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "660bd8e0-aa66-11ea-bce2-a1562447b088"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "4e513c90-ab33-11ea-bce2-a1562447b088"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "660bd8e0-aa66-11ea-bce2-a1562447b088"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "5cb7e390-93cf-11ea-82c8-230398f51544"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "660bd8e0-aa66-11ea-bce2-a1562447b088"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "77b3d910-93cf-11ea-82c8-230398f51544"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "660bd8e0-aa66-11ea-bce2-a1562447b088"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "78d73510-6aeb-11ea-82c8-230398f51544"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "660bd8e0-aa66-11ea-bce2-a1562447b088"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "7f0be220-93cf-11ea-82c8-230398f51544"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "activeDevices",
+      "lastUpdateTs" : 1707195608859,
+      "longValue" : 6,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCount",
+      "lastUpdateTs" : 1707248877107,
+      "longValue" : 5,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountCriticalAck",
+      "lastUpdateTs" : 1707248877107,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountCriticalUnack",
+      "lastUpdateTs" : 1707248877107,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountMajorAck",
+      "lastUpdateTs" : 1707248877107,
+      "longValue" : 1,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountMajorUnack",
+      "lastUpdateTs" : 1707248877107,
+      "longValue" : 4,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "description",
+      "lastUpdateTs" : 1592249746266,
+      "longValue" : null,
+      "strValue" : "Sensors to be temporarily deployed when needed"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "image",
+      "lastUpdateTs" : 1592249746266,
+      "longValue" : null,
+      "strValue" : "https://media.log5data.com/images/Emergency_Sensors.png"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "maxPerfDaily",
+      "lastUpdateTs" : 1697515204606,
+      "longValue" : 100,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 97.96,
+      "jsonValue" : null,
+      "key" : "minPerfDaily",
+      "lastUpdateTs" : 1697515204444,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "perfDate",
+      "lastUpdateTs" : 1697515204606,
+      "longValue" : 20231017,
+      "strValue" : null
+    } ]
+  }
+}

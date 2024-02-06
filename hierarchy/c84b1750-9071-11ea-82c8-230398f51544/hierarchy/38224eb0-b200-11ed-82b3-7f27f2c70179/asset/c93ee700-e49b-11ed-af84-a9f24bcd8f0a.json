@@ -1,0 +1,156 @@
+{
+  "entityType" : "ASSET",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "assetProfileId" : {
+      "entityType" : "ASSET_PROFILE",
+      "id" : "2faadf50-bad2-11ee-902e-d7d4d78cf384"
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "38224eb0-b200-11ed-82b3-7f27f2c70179"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "ASSET",
+      "id" : "c93ee700-e49b-11ed-af84-a9f24bcd8f0a"
+    },
+    "label" : null,
+    "name" : "8. HYP Cage 2 DHC1",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "38224eb0-b200-11ed-82b3-7f27f2c70179"
+    },
+    "type" : "room"
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "98542e80-88ea-11ea-82c8-230398f51544"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "c93ee700-e49b-11ed-af84-a9f24bcd8f0a"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "c93ee700-e49b-11ed-af84-a9f24bcd8f0a"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "aa3d8350-ca17-11ed-af84-a9f24bcd8f0a"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "c93ee700-e49b-11ed-af84-a9f24bcd8f0a"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "5771eae0-b927-11ed-82b3-7f27f2c70179"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "activeDevices",
+      "lastUpdateTs" : 1707195608856,
+      "longValue" : 2,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCount",
+      "lastUpdateTs" : 1707248877174,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountCriticalAck",
+      "lastUpdateTs" : 1707248877174,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountCriticalUnack",
+      "lastUpdateTs" : 1707248877174,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountMajorAck",
+      "lastUpdateTs" : 1707248877174,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountMajorUnack",
+      "lastUpdateTs" : 1707248877174,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "description",
+      "lastUpdateTs" : 1682559398280,
+      "longValue" : null,
+      "strValue" : "2 temp/hum sensors"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "image",
+      "lastUpdateTs" : 1682622697066,
+      "longValue" : null,
+      "strValue" : "https://media.log5data.com/images/Hyper(AAL-27April2023).jpg"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "maxPerfDaily",
+      "lastUpdateTs" : 1697515204606,
+      "longValue" : 100,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 95.83,
+      "jsonValue" : null,
+      "key" : "minPerfDaily",
+      "lastUpdateTs" : 1697515204443,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "perfDate",
+      "lastUpdateTs" : 1697515204606,
+      "longValue" : 20231017,
+      "strValue" : null
+    } ]
+  }
+}

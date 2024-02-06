@@ -1,0 +1,44 @@
+{
+  "entityType" : "TB_RESOURCE",
+  "entity" : {
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "data" : "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",
+    "descriptor" : {
+      "mediaType" : "image/png",
+      "width" : 200,
+      "height" : 42,
+      "size" : 3932,
+      "etag" : "872ad490ae01de1a81e15219d6e0d14fa702575cd2e5cb1f111634605d6a4d02",
+      "previewDescriptor" : {
+        "mediaType" : "image/png",
+        "width" : 200,
+        "height" : 42,
+        "size" : 3932,
+        "etag" : "872ad490ae01de1a81e15219d6e0d14fa702575cd2e5cb1f111634605d6a4d02"
+      }
+    },
+    "etag" : "872ad490ae01de1a81e15219d6e0d14fa702575cd2e5cb1f111634605d6a4d02",
+    "externalId" : null,
+    "fileName" : "noc_dashboard_dashboard_widget_background.png",
+    "id" : {
+      "entityType" : "TB_RESOURCE",
+      "id" : "c5b14f80-badb-11ee-8f3c-ef9f31070ab4"
+    },
+    "link" : "/api/images/tenant/noc_dashboard_dashboard_widget_background.png",
+    "name" : "\"NOC Dashboard\" dashboard widget \"\" background",
+    "preview" : null,
+    "public" : true,
+    "publicLink" : "/api/images/public/8qWhxT4s9frkW5QRcUUbI2ZbpK9OAVXm",
+    "publicResourceKey" : "8qWhxT4s9frkW5QRcUUbI2ZbpK9OAVXm",
+    "resourceKey" : "noc_dashboard_dashboard_widget_background.png",
+    "resourceType" : "IMAGE",
+    "title" : "\"NOC Dashboard\" dashboard widget \"\" background"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

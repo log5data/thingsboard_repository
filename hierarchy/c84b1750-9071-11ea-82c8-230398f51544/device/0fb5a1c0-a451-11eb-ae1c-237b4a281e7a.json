@@ -1,0 +1,206 @@
+{
+  "entityType" : "DEVICE",
+  "entity" : {
+    "additionalInfo" : null,
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "deviceData" : {
+      "configuration" : {
+        "type" : "DEFAULT"
+      },
+      "transportConfiguration" : {
+        "type" : "DEFAULT"
+      }
+    },
+    "deviceProfileId" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "07977360-7e0e-11eb-a3a9-15cc024027a0"
+    },
+    "externalId" : null,
+    "firmwareId" : null,
+    "id" : {
+      "entityType" : "DEVICE",
+      "id" : "0fb5a1c0-a451-11eb-ae1c-237b4a281e7a"
+    },
+    "label" : "MTL-2 Interior",
+    "name" : "pressure-5",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "softwareId" : null,
+    "type" : "air-pressure"
+  },
+  "credentials" : {
+    "credentialsId" : "2PzPex3eaoyc7RLFnrC5",
+    "credentialsType" : "ACCESS_TOKEN",
+    "credentialsValue" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "fe2715e0-647f-11ea-82c8-230398f51544"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "0fb5a1c0-a451-11eb-ae1c-237b4a281e7a"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "693c9220-af16-11ea-bce2-a1562447b088"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "0fb5a1c0-a451-11eb-ae1c-237b4a281e7a"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "aType",
+      "lastUpdateTs" : 1619196837550,
+      "longValue" : null,
+      "strValue" : "air-pressure"
+    }, {
+      "booleanValue" : true,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "active",
+      "lastUpdateTs" : 1682024600424,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCount",
+      "lastUpdateTs" : 1707248877023,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountCriticalAck",
+      "lastUpdateTs" : 1707248877023,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountCriticalUnack",
+      "lastUpdateTs" : 1707248877023,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountMajorAck",
+      "lastUpdateTs" : 1707248877023,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountMajorUnack",
+      "lastUpdateTs" : 1707248877023,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "booleanValue",
+      "lastUpdateTs" : 1619197203277,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "image",
+      "lastUpdateTs" : 1619197203277,
+      "longValue" : null,
+      "strValue" : "https://media.log5data.com/images/interior.png"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityAlarmTime",
+      "lastUpdateTs" : 1682022858176,
+      "longValue" : 1682022858176,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityTimeout",
+      "lastUpdateTs" : 1707247900272,
+      "longValue" : 18000000,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastActivityTime",
+      "lastUpdateTs" : 1707247900261,
+      "longValue" : 1707247900237,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "miss_fcnt_sum_daily",
+      "lastUpdateTs" : 1707195609835,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "reportingFreq",
+      "lastUpdateTs" : 1707247900272,
+      "longValue" : 1800,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "uplink_counts",
+      "lastUpdateTs" : 1707195609837,
+      "longValue" : 48,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 0.1806352698063527,
+      "jsonValue" : null,
+      "key" : "xPos",
+      "lastUpdateTs" : 1680095270424,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 0.9561643835616438,
+      "jsonValue" : null,
+      "key" : "yPos",
+      "lastUpdateTs" : 1680095270424,
+      "longValue" : null,
+      "strValue" : null
+    } ],
+    "SHARED_SCOPE" : [ ]
+  }
+}

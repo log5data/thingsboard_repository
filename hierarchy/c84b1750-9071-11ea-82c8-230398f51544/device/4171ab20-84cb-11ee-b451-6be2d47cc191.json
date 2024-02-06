@@ -1,0 +1,82 @@
+{
+  "entityType" : "DEVICE",
+  "entity" : {
+    "additionalInfo" : null,
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "deviceData" : {
+      "configuration" : {
+        "type" : "DEFAULT"
+      },
+      "transportConfiguration" : {
+        "type" : "DEFAULT"
+      }
+    },
+    "deviceProfileId" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "4170c0c0-84cb-11ee-b451-6be2d47cc191"
+    },
+    "externalId" : null,
+    "firmwareId" : null,
+    "id" : {
+      "entityType" : "DEVICE",
+      "id" : "4171ab20-84cb-11ee-b451-6be2d47cc191"
+    },
+    "label" : null,
+    "name" : "24e124468c311551",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "softwareId" : null,
+    "type" : "milesight-uc100"
+  },
+  "credentials" : {
+    "credentialsId" : "SQLqtRpfuQG0zRL0FHfo",
+    "credentialsType" : "ACCESS_TOKEN",
+    "credentialsValue" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "32cef500-781e-11ee-b451-6be2d47cc191"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "4171ab20-84cb-11ee-b451-6be2d47cc191"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "active",
+      "lastUpdateTs" : 1702563722555,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityAlarmTime",
+      "lastUpdateTs" : 1702563722555,
+      "longValue" : 1702563722555,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastActivityTime",
+      "lastUpdateTs" : 1702563105038,
+      "longValue" : 1702563105035,
+      "strValue" : null
+    } ],
+    "SHARED_SCOPE" : [ ]
+  }
+}

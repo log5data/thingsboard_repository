@@ -1,0 +1,306 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : true,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "2b2fdcf0-e607-11ed-af84-a9f24bcd8f0a"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "e9bd82a0-e5f6-11ed-af84-a9f24bcd8f0a"
+    },
+    "name" : "Data Retrieval Judgment",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 1,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 8,
+      "type" : "True"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 7,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 0,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 4,
+      "type" : "True"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 5,
+      "type" : "Dragino"
+    }, {
+      "fromIndex" : 8,
+      "toIndex" : 9,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 6,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 913,
+        "layoutY" : 494
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "dataRetrieval" ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : false,
+        "fetchTo" : "METADATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "83acdbe0-e5f7-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Get Data Retireval Switch",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1094,
+        "layoutY" : 561
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "reportingFreq" ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : false,
+        "fetchTo" : "METADATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "aacb8670-e63a-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Get Reporting Frequency",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1268,
+        "layoutY" : 628
+      },
+      "configuration" : {
+        "inputValueKey" : "ts",
+        "outputValueKey" : "delta_ts",
+        "useCache" : true,
+        "addPeriodBetweenMsgs" : false,
+        "periodValueKey" : "periodInMs",
+        "round" : null,
+        "tellFailureIfDeltaIsNegative" : true
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "aacbad80-e63a-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Delta Ts",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.CalculateDeltaNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1440,
+        "layoutY" : 698
+      },
+      "configuration" : {
+        "jsScript" : "return (msg.miss_fcnt >= 1 && msg.delta_ts != 0)|| ((msg.delta_count < 0) && (msg.delta_ts / 1000 + 60) >= 2 * metadata.ss_reportingFreq); //60(seconds) is an offset to increase fault tolerance"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "aacbfba0-e63a-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Miss Fcnt",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 399,
+        "layoutY" : 283
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "manufacturer" ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : false,
+        "fetchTo" : "METADATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ad4a2dc0-e608-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Get Manufacturer",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 743,
+        "layoutY" : 427
+      },
+      "configuration" : {
+        "dataMapping" : {
+          "dataRetrievalDragino" : "dataRetrievalDragino"
+        },
+        "dataToFetch" : "ATTRIBUTES",
+        "fetchTo" : "METADATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "18116770-e5f7-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Get Customer Data Retrieval Switch",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetCustomerAttributeNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 227,
+        "layoutY" : 214
+      },
+      "configuration" : {
+        "jsScript" : "return metadata.deviceType != 'gateway';"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "2b2fdcf0-e607-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "gateway filter",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 586,
+        "layoutY" : 355
+      },
+      "configuration" : {
+        "jsScript" : "return metadata.ss_manufacturer;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "54aedef0-e5f8-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Manufacturer Switch",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1613,
+        "layoutY" : 767
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\nvar newMetadata = {};\nvar end_ts = Math.round(parseInt(msg.ts) / 1000) - Math.round(parseInt(metadata.ss_reportingFreq) / 2);\nvar start_ts = Math.round(parseInt(msg.ts) / 1000) - Math.round(parseInt(msg.delta_ts) / 1000) + Math.round(parseInt(metadata.ss_reportingFreq) / 2);\nnewMsg.poll_sensor_value = true;\nnewMsg.start_ts = start_ts;\nnewMsg.end_ts = end_ts;\nnewMsg.uplink_interval = 10;\nnewMetadata.devId = metadata.deviceName;\nreturn {msg: newMsg, metadata: newMetadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "6c0ea170-e625-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Data Retrieval Process",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1788,
+        "layoutY" : 836
+      },
+      "configuration" : {
+        "integrationId" : "24a28a51-b8ca-11ed-82b3-7f27f2c70179"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "74cbb8c0-e896-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "downlink",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.integration.TbIntegrationDownlinkNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

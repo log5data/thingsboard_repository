@@ -1,0 +1,24 @@
+{
+  "entityType" : "CONVERTER",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : {
+      "decoder" : "// Decode an uplink message from a buffer\n// payload - array of bytes\n// metadata - key/value object\n\n\n// decode payload to JSON\nvar data = decodeToJson(payload);\n\nvar result = [];\n\nvar rxMeta = data.uplink_message.rx_metadata;\nvar ulPayload = data.uplink_message.decoded_payload;\n\nif (typeof ulPayload === 'undefined') {\n    result.push({\n        deviceName: data.end_device_ids.device_id,\n        deviceType: 'tempHumidity',\n        telemetry: {\n            MsgType: 'throwaway'\n        }\n    });\n} else {\n    // Result object with device attributes/telemetry data\n    result.push({\n        deviceName: data.end_device_ids.device_id,\n        deviceType: 'tempHumidity',\n        attributes: {\n                    integrationName: metadata.integrationName, \n                    applicationId: data.end_device_ids.application_ids.application_id\n                 },\n        telemetry: {\n            temperature: ulPayload.Temperature,\n            humidity: ulPayload.Humidity,\n            DustParticulate: ulPayload.Particulate,\n            port: data.uplink_message.f_port,\n            count: data.uplink_message.f_cnt,\n            time: data.uplink_message.received_at\n        }\n    });\n}\n\n for (var numGWs = 0; numGWs < rxMeta.length; numGWs++) {\n    result.push({\n        deviceName: rxMeta[numGWs].gateway_ids.eui,\n        deviceType: 'gateway',\n        telemetry: {\n            reportingDevice: data.end_device_ids.device_id,\n            time: data.uplink_message.received_at,\n            frequency: parseInt(data.uplink_message\n                .settings.frequency) / 1000000,\n            modulation: \"LORA\",\n            data_rate: \"SF\" + data.uplink_message\n                .settings.data_rate.lora\n                .spreading_factor + \"BW\" + data\n                .uplink_message.settings.data_rate\n                .lora.bandwidth / 1000,\n            coding_rate: data.uplink_message\n                .settings.coding_rate,\n            gatewayRssi: rxMeta[numGWs].rssi,\n            gatewayChannel: rxMeta[numGWs]\n                .channel_index,\n            gatewaySNR: rxMeta[numGWs].snr\n        }\n    });\n}\n/** Helper functions **/\n\nfunction decodeToString(payload) {\n    return String.fromCharCode.apply(String, payload);\n}\n\nfunction decodeToJson(payload) {\n    // covert payload to string.\n    var str = decodeToString(payload);\n\n    // parse string to JSON\n    var data = JSON.parse(str);\n    return data;\n}\n\nreturn result;"
+    },
+    "debugMode" : false,
+    "edgeTemplate" : false,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "CONVERTER",
+      "id" : "68cd35a0-2c35-11eb-8887-e94257e8a11b"
+    },
+    "name" : "GlobalSat-TTS-FEI",
+    "type" : "UPLINK"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

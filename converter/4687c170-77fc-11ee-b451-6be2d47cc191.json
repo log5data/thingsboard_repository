@@ -1,0 +1,25 @@
+{
+  "entityType" : "CONVERTER",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : {
+      "decoder" : "var data = decodeToJson(payload);\r\nvar deviceName = data.end_device_ids.device_id;\r\nvar deviceType = data.end_device_ids.application_ids.application_id;\r\n\r\nvar result = {\r\n    deviceName: deviceName,\r\n    deviceType: deviceType,\r\n    telemetry: {\r\n         chn1: data.uplink_message.decoded_payload.chn1,\r\n         chn2: data.uplink_message.decoded_payload.chn2,\r\n         chn3: data.uplink_message.decoded_payload.chn3,\r\n         chn4: data.uplink_message.decoded_payload.chn4,\r\n         chn5: data.uplink_message.decoded_payload.chn5,\r\n         chn6: data.uplink_message.decoded_payload.chn6,\r\n         chn7: data.uplink_message.decoded_payload.chn7,\r\n         chn8: data.uplink_message.decoded_payload.chn8,\r\n         chn9: data.uplink_message.decoded_payload.chn9,\r\n         chn10: data.uplink_message.decoded_payload.chn10,\r\n         chn11: data.uplink_message.decoded_payload.chn11,\r\n         chn12: data.uplink_message.decoded_payload.chn12,\r\n         chn13: data.uplink_message.decoded_payload.chn13,\r\n         chn14: data.uplink_message.decoded_payload.chn14,\r\n         chn15: data.uplink_message.decoded_payload.chn15,\r\n         chn16: data.uplink_message.decoded_payload.chn16\r\n    }\r\n};\r\n\r\nfunction decodeToString(payload) {\r\n    return String.fromCharCode.apply(String, payload);\r\n}\r\n\r\nfunction decodeToJson(payload) {\r\n    var str = decodeToString(payload);\r\n    var data = JSON.parse(str);\r\n    return data;\r\n}\r\n\r\nreturn result;",
+      "encoder" : null
+    },
+    "debugMode" : true,
+    "edgeTemplate" : false,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "CONVERTER",
+      "id" : "4687c170-77fc-11ee-b451-6be2d47cc191"
+    },
+    "name" : "Milesight UC100 Uplink",
+    "type" : "UPLINK"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

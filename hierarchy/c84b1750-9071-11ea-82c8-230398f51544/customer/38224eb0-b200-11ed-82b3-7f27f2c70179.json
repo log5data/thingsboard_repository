@@ -1,0 +1,42 @@
+{
+  "entityType" : "CUSTOMER",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : "TBD",
+      "allowWhiteLabeling" : true,
+      "homeDashboardId" : null,
+      "homeDashboardHideToolbar" : true
+    },
+    "address" : null,
+    "address2" : null,
+    "city" : "Montreal",
+    "country" : "Canada",
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "email" : null,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "CUSTOMER",
+      "id" : "38224eb0-b200-11ed-82b3-7f27f2c70179"
+    },
+    "name" : "Customer A200",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "parentCustomerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "phone" : null,
+    "state" : "QC",
+    "title" : "Customer A200",
+    "zip" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

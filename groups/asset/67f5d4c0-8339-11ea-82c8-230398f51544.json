@@ -1,0 +1,92 @@
+{
+  "entityType" : "ENTITY_GROUP",
+  "entity" : {
+    "additionalInfo" : null,
+    "configuration" : {
+      "columns" : [ {
+        "type" : "ENTITY_FIELD",
+        "key" : "created_time",
+        "sortOrder" : "DESC"
+      }, {
+        "type" : "ENTITY_FIELD",
+        "key" : "name",
+        "sortOrder" : "NONE"
+      }, {
+        "type" : "ENTITY_FIELD",
+        "key" : "type",
+        "sortOrder" : "NONE"
+      } ],
+      "settings" : {
+        "groupTableTitle" : "",
+        "enableSearch" : true,
+        "enableAdd" : true,
+        "enableDelete" : true,
+        "enableSelection" : true,
+        "enableGroupTransfer" : true,
+        "detailsMode" : "onRowClick",
+        "displayPagination" : true,
+        "defaultPageSize" : 10,
+        "enableAssignment" : true
+      },
+      "actions" : { }
+    },
+    "edgeGroupAll" : false,
+    "externalId" : null,
+    "groupAll" : false,
+    "id" : {
+      "entityType" : "ENTITY_GROUP",
+      "id" : "67f5d4c0-8339-11ea-82c8-230398f51544"
+    },
+    "name" : "rooms",
+    "ownerId" : {
+      "entityType" : "TENANT",
+      "id" : "ff86cc40-d58d-11e9-8f5f-f518386fb8db"
+    },
+    "type" : "ASSET"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCount1",
+      "lastUpdateTs" : 1589991942950,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountCriticalAck1",
+      "lastUpdateTs" : 1589991942950,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountCriticalUnack1",
+      "lastUpdateTs" : 1589991942950,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountMajorAck1",
+      "lastUpdateTs" : 1589991942950,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountMajorUnack1",
+      "lastUpdateTs" : 1589991942950,
+      "longValue" : 0,
+      "strValue" : null
+    } ]
+  },
+  "groupEntities" : true
+}

@@ -1,0 +1,77 @@
+{
+  "entityType" : "ENTITY_GROUP",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : "Air Pressure Sensors (typically a Pair is related to a Delta Pressure Asset/Door)"
+    },
+    "configuration" : {
+      "columns" : [ {
+        "type" : "ENTITY_FIELD",
+        "key" : "created_time",
+        "sortOrder" : "DESC"
+      }, {
+        "type" : "ENTITY_FIELD",
+        "key" : "name",
+        "sortOrder" : "NONE"
+      }, {
+        "type" : "ENTITY_FIELD",
+        "key" : "device_profile",
+        "sortOrder" : "NONE"
+      }, {
+        "type" : "ENTITY_FIELD",
+        "key" : "label",
+        "sortOrder" : "NONE"
+      }, {
+        "type" : "TIMESERIES",
+        "key" : "airPressure",
+        "sortOrder" : "NONE",
+        "mobileHide" : false,
+        "title" : null
+      }, {
+        "type" : "TIMESERIES",
+        "key" : "temperature",
+        "sortOrder" : "NONE",
+        "mobileHide" : false,
+        "title" : null
+      }, {
+        "type" : "TIMESERIES",
+        "key" : "humidity",
+        "sortOrder" : "NONE",
+        "mobileHide" : false,
+        "title" : null
+      } ],
+      "settings" : {
+        "groupTableTitle" : "",
+        "enableSearch" : true,
+        "enableAdd" : true,
+        "enableDelete" : true,
+        "enableSelection" : true,
+        "enableGroupTransfer" : true,
+        "detailsMode" : "onRowClick",
+        "displayPagination" : true,
+        "defaultPageSize" : 10,
+        "enableAssignment" : true,
+        "enableCredentialsManagement" : true
+      },
+      "actions" : { }
+    },
+    "edgeGroupAll" : false,
+    "externalId" : null,
+    "groupAll" : false,
+    "id" : {
+      "entityType" : "ENTITY_GROUP",
+      "id" : "a61f4100-a116-11ea-82c8-230398f51544"
+    },
+    "name" : "Air-pressure",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "type" : "DEVICE"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  },
+  "groupEntities" : true
+}

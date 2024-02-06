@@ -1,0 +1,214 @@
+{
+  "entityType" : "DEVICE",
+  "entity" : {
+    "additionalInfo" : null,
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "deviceData" : {
+      "configuration" : {
+        "type" : "DEFAULT"
+      },
+      "transportConfiguration" : {
+        "type" : "DEFAULT"
+      }
+    },
+    "deviceProfileId" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "079a5990-7e0e-11eb-a3a9-15cc024027a0"
+    },
+    "externalId" : null,
+    "firmwareId" : null,
+    "id" : {
+      "entityType" : "DEVICE",
+      "id" : "5b36ceb0-94c8-11ea-82c8-230398f51544"
+    },
+    "label" : "MTL-2 Micro GW",
+    "name" : "647FDAFFFE007DBC",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "softwareId" : null,
+    "type" : "gateway"
+  },
+  "credentials" : {
+    "credentialsId" : "sZ76C9HBuVWoEoWNWr7s",
+    "credentialsType" : "ACCESS_TOKEN",
+    "credentialsValue" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "fe2715e0-647f-11ea-82c8-230398f51544"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "5b36ceb0-94c8-11ea-82c8-230398f51544"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "693c9220-af16-11ea-bce2-a1562447b088"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "5b36ceb0-94c8-11ea-82c8-230398f51544"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "aType",
+      "lastUpdateTs" : 1605245960296,
+      "longValue" : null,
+      "strValue" : "gateway"
+    }, {
+      "booleanValue" : true,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "active",
+      "lastUpdateTs" : 1705708809537,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCount",
+      "lastUpdateTs" : 1707248877022,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCount1",
+      "lastUpdateTs" : 1605245960296,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountCriticalAck",
+      "lastUpdateTs" : 1707248877022,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountCriticalAck1",
+      "lastUpdateTs" : 1605245960296,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountCriticalUnack",
+      "lastUpdateTs" : 1707248877022,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountCriticalUnack1",
+      "lastUpdateTs" : 1605245960296,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountMajorAck",
+      "lastUpdateTs" : 1707248877022,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountMajorAck1",
+      "lastUpdateTs" : 1605245960296,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountMajorUnack",
+      "lastUpdateTs" : 1707248877022,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountMajorUnack1",
+      "lastUpdateTs" : 1605245960296,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "description",
+      "lastUpdateTs" : 1605245960296,
+      "longValue" : null,
+      "strValue" : ""
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityAlarmTime",
+      "lastUpdateTs" : 1705686605219,
+      "longValue" : 1705686605214,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityTimeout",
+      "lastUpdateTs" : 1605245960296,
+      "longValue" : 5400000,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastActivityTime",
+      "lastUpdateTs" : 1707248878394,
+      "longValue" : 1707248878387,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 0.2364196913641969,
+      "jsonValue" : null,
+      "key" : "xPos",
+      "lastUpdateTs" : 1680095267324,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 0.9616438356164384,
+      "jsonValue" : null,
+      "key" : "yPos",
+      "lastUpdateTs" : 1680095267324,
+      "longValue" : null,
+      "strValue" : null
+    } ],
+    "SHARED_SCOPE" : [ ]
+  }
+}

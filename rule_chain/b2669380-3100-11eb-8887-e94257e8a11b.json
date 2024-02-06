@@ -1,0 +1,268 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : null,
+    "configuration" : null,
+    "debugMode" : false,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "b26b4e70-3100-11eb-8887-e94257e8a11b"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "b2669380-3100-11eb-8887-e94257e8a11b"
+    },
+    "name" : "New Clear Inactivity Alarm",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 8,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 7,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 3,
+      "type" : "Cleared"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 5,
+      "type" : "Cleared"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 6,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 8,
+      "toIndex" : 1,
+      "type" : "True"
+    } ],
+    "firstNodeIndex" : 0,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "Allows for a longer timeout for email",
+        "layoutX" : 307,
+        "layoutY" : 149
+      },
+      "configuration" : {
+        "queueName" : "HighPriority"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b26b4e70-3100-11eb-8887-e94257e8a11b"
+      },
+      "name" : "Move to HighPriority Queue",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbCheckpointNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 486,
+        "layoutY" : 273
+      },
+      "configuration" : {
+        "dataMapping" : {
+          "label" : "originatorLabel"
+        },
+        "fetchTo" : "METADATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b26c38d0-3100-11eb-8887-e94257e8a11b"
+      },
+      "name" : "Add Device Label",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetOriginatorFieldsNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "Notify to mobile",
+        "layoutX" : 1422,
+        "layoutY" : 401
+      },
+      "configuration" : {
+        "numbersTo" : "${textNotify}",
+        "numberFrom" : "+14387963478",
+        "accountSid" : "AC705ee3dc7460243ec1febeba7dd77bc5",
+        "accountToken" : "0de7867636e4d705c4c6f6a58c476aef"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b26cae00-3100-11eb-8887-e94257e8a11b"
+      },
+      "name" : "Log5Data Notification",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.pe.twilio.TbTwilioSmsNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 1097,
+        "layoutY" : 401
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg;\r\nmetadata.alarmTime = new Date();\r\n\r\n\r\nnewMsg = 'Activity detected for device ' + metadata.originatorLabel + ' at ' + metadata.alarmTime + '. For details goto: thingsboard.log5data.com';\r\n\r\n//if (metadata.tenant_phone)\r\n//   metadata.textNotify = metadata.tenant_phone;\r\n\r\nreturn {\r\n    msg: newMsg,\r\n    metadata: metadata,\r\n    msgType: msgType\r\n};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b26cfc20-3100-11eb-8887-e94257e8a11b"
+      },
+      "name" : "Construct Mobile Notify",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 831,
+        "layoutY" : 299
+      },
+      "configuration" : {
+        "alarmType" : "Inactivity Alarm",
+        "alarmDetailsBuildJs" : "var details = {};\r\nif (metadata.prevAlarmDetails) {\r\n    details = JSON.parse(metadata.prevAlarmDetails);\r\n}\r\n\r\nreturn details;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b26d7150-3100-11eb-8887-e94257e8a11b"
+      },
+      "name" : "Clear Inactivity Alarm",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbClearAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 1098,
+        "layoutY" : 219
+      },
+      "configuration" : {
+        "fromTemplate" : "support@log5data.com",
+        "toTemplate" : "robinjoseph0214@gmail.com, ${emailNotify}",
+        "ccTemplate" : null,
+        "bccTemplate" : null,
+        "subjectTemplate" : "Device ${originatorLabel} detected Active",
+        "bodyTemplate" : "Device ${originatorLabel} has been detected active. Alarm has been cleared."
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b26e34a0-3100-11eb-8887-e94257e8a11b"
+      },
+      "name" : "Clear Inactivity Alarm",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.mail.TbMsgToEmailNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 1424,
+        "layoutY" : 223
+      },
+      "configuration" : {
+        "useSystemSmtpSettings" : true,
+        "smtpHost" : "localhost",
+        "smtpPort" : 25,
+        "username" : null,
+        "password" : null,
+        "smtpProtocol" : "smtp",
+        "timeout" : 10000,
+        "enableTls" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b26ea9d0-3100-11eb-8887-e94257e8a11b"
+      },
+      "name" : "send email",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.mail.TbSendEmailNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 586,
+        "layoutY" : 391
+      },
+      "configuration" : {
+        "dataMapping" : {
+          "activity-textNotify" : "textNotify",
+          "activity-emailNotify" : "emailNotify"
+        },
+        "dataToFetch" : "ATTRIBUTES",
+        "fetchTo" : "METADATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b26ef7f0-3100-11eb-8887-e94257e8a11b"
+      },
+      "name" : "Add tenant Email and Text Notify addresses",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetTenantAttributeNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 608,
+        "layoutY" : 151
+      },
+      "configuration" : {
+        "originatorTypes" : [ "DEVICE" ]
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b26f6d20-3100-11eb-8887-e94257e8a11b"
+      },
+      "name" : "Devices only",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbOriginatorTypeFilterNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

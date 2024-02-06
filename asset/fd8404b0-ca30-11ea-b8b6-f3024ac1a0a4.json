@@ -1,0 +1,53 @@
+{
+  "entityType" : "ASSET",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : "Pressure 9 & 10"
+    },
+    "assetProfileId" : {
+      "entityType" : "ASSET_PROFILE",
+      "id" : "2fab2d70-bad2-11ee-902e-d7d4d78cf384"
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "13814000-1dd2-11b2-8080-808080808080"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "ASSET",
+      "id" : "fd8404b0-ca30-11ea-b8b6-f3024ac1a0a4"
+    },
+    "label" : "DOOR9-10",
+    "name" : "DOOR9-10",
+    "ownerId" : null,
+    "type" : "door"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "aType",
+      "lastUpdateTs" : 1595213149581,
+      "longValue" : null,
+      "strValue" : "door"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "deltaPressureOffset",
+      "lastUpdateTs" : 1595214841347,
+      "longValue" : 124,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityTimeout",
+      "lastUpdateTs" : 1595213149581,
+      "longValue" : 5400000,
+      "strValue" : null
+    } ]
+  }
+}

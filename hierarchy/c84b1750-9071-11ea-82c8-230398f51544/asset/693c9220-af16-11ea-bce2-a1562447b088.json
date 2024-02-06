@@ -1,0 +1,332 @@
+{
+  "entityType" : "ASSET",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : "GW, diff pressure and dust"
+    },
+    "assetProfileId" : {
+      "entityType" : "ASSET_PROFILE",
+      "id" : "2faadf50-bad2-11ee-902e-d7d4d78cf384"
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "ASSET",
+      "id" : "693c9220-af16-11ea-bce2-a1562447b088"
+    },
+    "label" : "5. MTL2 - Full site view",
+    "name" : "MTL2 - Full site view",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "type" : "room"
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "98542e80-88ea-11ea-82c8-230398f51544"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "693c9220-af16-11ea-bce2-a1562447b088"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "693c9220-af16-11ea-bce2-a1562447b088"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "693c9220-af16-11ea-bce2-a1562447b088"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "9a999440-6ae6-11ea-82c8-230398f51544"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "693c9220-af16-11ea-bce2-a1562447b088"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "a410c0e0-6af3-11ea-82c8-230398f51544"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "693c9220-af16-11ea-bce2-a1562447b088"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "bcc9ff20-23cb-11eb-8887-e94257e8a11b"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "693c9220-af16-11ea-bce2-a1562447b088"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "c8db4610-6ae5-11ea-82c8-230398f51544"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "693c9220-af16-11ea-bce2-a1562447b088"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "0a611f90-83e8-11ea-82c8-230398f51544"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "693c9220-af16-11ea-bce2-a1562447b088"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "0e5ed6a0-5461-11ec-83d3-77b7b1eedcae"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "693c9220-af16-11ea-bce2-a1562447b088"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "0fb5a1c0-a451-11eb-ae1c-237b4a281e7a"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "693c9220-af16-11ea-bce2-a1562447b088"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "29e4d080-afbb-11ed-82b3-7f27f2c70179"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "693c9220-af16-11ea-bce2-a1562447b088"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "33dcbe50-23cb-11eb-8887-e94257e8a11b"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "693c9220-af16-11ea-bce2-a1562447b088"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "41c1b840-23cb-11eb-8887-e94257e8a11b"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "693c9220-af16-11ea-bce2-a1562447b088"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "41d61361-6488-11ea-82c8-230398f51544"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "693c9220-af16-11ea-bce2-a1562447b088"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "59e69480-6ae5-11ea-82c8-230398f51544"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "693c9220-af16-11ea-bce2-a1562447b088"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "5b36ceb0-94c8-11ea-82c8-230398f51544"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "693c9220-af16-11ea-bce2-a1562447b088"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "60daf340-f094-11eb-af9e-3dc7b00facd5"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "693c9220-af16-11ea-bce2-a1562447b088"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "6b75c4d0-7a08-11ec-83d3-77b7b1eedcae"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "activeDevices",
+      "lastUpdateTs" : 1707195608863,
+      "longValue" : 8,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCount",
+      "lastUpdateTs" : 1707248877024,
+      "longValue" : 6,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountCriticalAck",
+      "lastUpdateTs" : 1707248877024,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountCriticalUnack",
+      "lastUpdateTs" : 1707248877024,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountMajorAck",
+      "lastUpdateTs" : 1707248877024,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountMajorUnack",
+      "lastUpdateTs" : 1707248877024,
+      "longValue" : 6,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "booleanValue",
+      "lastUpdateTs" : 1680094345679,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "description",
+      "lastUpdateTs" : 1592481213587,
+      "longValue" : null,
+      "strValue" : "MTL2 Gateways, differential pressure and dust particles sensors"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "image",
+      "lastUpdateTs" : 1680094555681,
+      "longValue" : null,
+      "strValue" : "https://media.log5data.com/images/MTL2-overall-site.jpg"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "maxPerfDaily",
+      "lastUpdateTs" : 1697515204807,
+      "longValue" : 72,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "minPerfDaily",
+      "lastUpdateTs" : 1697515204807,
+      "longValue" : 72,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "perfDate",
+      "lastUpdateTs" : 1697515204807,
+      "longValue" : 20231017,
+      "strValue" : null
+    } ]
+  }
+}

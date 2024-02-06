@@ -1,0 +1,157 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : null,
+    "configuration" : null,
+    "debugMode" : true,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "44ed9b50-6482-11ea-82c8-230398f51544"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "44e5d320-6482-11ea-82c8-230398f51544"
+    },
+    "name" : "create critical low alarm",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 4,
+      "type" : "Cleared"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 0,
+      "type" : "Created"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 2,
+      "type" : "Updated"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 3,
+      "type" : "Created"
+    } ],
+    "firstNodeIndex" : 1,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "layoutX" : 539,
+        "layoutY" : 270
+      },
+      "configuration" : {
+        "alarmType" : "${measureName} High",
+        "alarmDetailsBuildJs" : "var details = {};\r\nif (metadata.prevAlarmDetails) {\r\n    details = JSON.parse(metadata.prevAlarmDetails);\r\n}\r\ndetails.measure = metadata.measureName;\r\ndetails.measurevalue = metadata.measure;\r\n\r\nreturn details;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "44ecff10-6482-11ea-82c8-230398f51544"
+      },
+      "name" : "clear High Alarm",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbClearAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 302,
+        "layoutY" : 151
+      },
+      "configuration" : {
+        "alarmDetailsBuildJs" : "var details = {};\ndetails.measure = metadata.measureName;\ndetails.measureValue = metadata.measure;\ndetails.label = metadata.label;\ndetails.majorThreshold = metadata.low;\ndetails.criticalThreshold = metadata.criticaldiff;\ndetails.severity = \"CRITICAL\"; \n\nif (metadata.prevAlarmDetails) {\n    var prevDetails = JSON.parse(metadata.prevAlarmDetails);\n    details.count = prevDetails.count + 1;\n    if (details.severity != prevDetails.severity){\n       details.statusChange = 1;\n    }else details.statusChange = 0;\n} else {\n    details.count = 1;\n}\n\nreturn details;",
+        "useMessageAlarmData" : false,
+        "alarmType" : "${measureName} Low",
+        "severity" : "CRITICAL",
+        "propagate" : true,
+        "relationTypes" : [ ],
+        "dynamicSeverity" : null
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "44ed9b50-6482-11ea-82c8-230398f51544"
+      },
+      "name" : "create CriticalLow Alarm",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 774,
+        "layoutY" : 152,
+        "ruleChainNodeId" : "rule-chain-node-4"
+      },
+      "configuration" : {
+        "ruleChainId" : "8e8aee10-3101-11eb-8887-e94257e8a11b"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0b1510c0-b6e5-11ee-b88b-791a828c489c"
+      },
+      "name" : "New Notifier",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 774,
+        "layoutY" : 152,
+        "ruleChainNodeId" : "rule-chain-node-4"
+      },
+      "configuration" : {
+        "ruleChainId" : "8e8aee10-3101-11eb-8887-e94257e8a11b"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0b181e00-b6e5-11ee-b88b-791a828c489c"
+      },
+      "name" : "New Notifier",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 774,
+        "layoutY" : 152,
+        "ruleChainNodeId" : "rule-chain-node-4"
+      },
+      "configuration" : {
+        "ruleChainId" : "8e8aee10-3101-11eb-8887-e94257e8a11b"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0b1a19d0-b6e5-11ee-b88b-791a828c489c"
+      },
+      "name" : "New Notifier",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "entityType" : "DEVICE",
+  "entity" : {
+    "additionalInfo" : null,
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "deviceData" : {
+      "configuration" : {
+        "type" : "DEFAULT"
+      },
+      "transportConfiguration" : {
+        "type" : "DEFAULT"
+      }
+    },
+    "deviceProfileId" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "f03f6bb0-6937-11ee-b451-6be2d47cc191"
+    },
+    "externalId" : null,
+    "firmwareId" : null,
+    "id" : {
+      "entityType" : "DEVICE",
+      "id" : "f04007f0-6937-11ee-b451-6be2d47cc191"
+    },
+    "label" : null,
+    "name" : "smart-button",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "softwareId" : null,
+    "type" : "smart-button"
+  },
+  "credentials" : {
+    "credentialsId" : "cOLBkLsZfBZQ5IRazTt5",
+    "credentialsType" : "ACCESS_TOKEN",
+    "credentialsValue" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "ddeb57d0-6937-11ee-b451-6be2d47cc191"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "f04007f0-6937-11ee-b451-6be2d47cc191"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "active",
+      "lastUpdateTs" : 1707186432077,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityAlarmTime",
+      "lastUpdateTs" : 1707186432077,
+      "longValue" : 1707186432077,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastActivityTime",
+      "lastUpdateTs" : 1707185778149,
+      "longValue" : 1707185778146,
+      "strValue" : null
+    } ],
+    "SHARED_SCOPE" : [ ]
+  }
+}

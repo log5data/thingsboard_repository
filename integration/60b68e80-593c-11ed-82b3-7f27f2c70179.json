@@ -1,0 +1,109 @@
+{
+  "entityType" : "INTEGRATION",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "allowCreateDevicesOrAssets" : true,
+    "configuration" : {
+      "clientConfiguration" : {
+        "host" : "things.log5data.com",
+        "port" : 1883,
+        "cleanSession" : true,
+        "ssl" : false,
+        "connectTimeoutSec" : 10,
+        "clientId" : "",
+        "maxBytesInMessage" : 32368,
+        "credentials" : {
+          "type" : "basic",
+          "username" : "tektelic-smart-room",
+          "password" : "NNSXS.OZBB45LBIBWYWMAFOC4RZ6LYTIC4OMCMF7XHZOI.2H6WGEMMBS4ZKWIJN5ZVIV77UXCIP7ZZWFQT7FYP4VMFH6QEYFLQ"
+        }
+      },
+      "downlinkTopicPattern" : "${topic}",
+      "topicFilters" : [ {
+        "filter" : "v3/tektelic-smart-room/devices/647fda0000005f09/up",
+        "qos" : 0
+      } ],
+      "metadata" : { }
+    },
+    "debugMode" : true,
+    "defaultConverterId" : {
+      "entityType" : "CONVERTER",
+      "id" : "6fabc8f0-2c35-11eb-8887-e94257e8a11b"
+    },
+    "downlinkConverterId" : null,
+    "edgeTemplate" : false,
+    "enabled" : true,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "INTEGRATION",
+      "id" : "60b68e80-593c-11ed-82b3-7f27f2c70179"
+    },
+    "name" : "Tektelic-Smart-Room-TTS",
+    "remote" : false,
+    "routingKey" : "a6fe5358-0cb0-d366-f1e4-051176050ba6",
+    "secret" : "39b5cw645qzbm3xodpcv",
+    "type" : "MQTT"
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "60b68e80-593c-11ed-82b3-7f27f2c70179"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "8945e3c0-5ab6-11ed-82b3-7f27f2c70179"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "60b68e80-593c-11ed-82b3-7f27f2c70179"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "d935db30-9dde-11ee-b451-6be2d47cc191"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "60b68e80-593c-11ed-82b3-7f27f2c70179"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "f2918cd0-651f-11ed-82b3-7f27f2c70179"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "60b68e80-593c-11ed-82b3-7f27f2c70179"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "1e319341-594e-11ed-82b3-7f27f2c70179"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "{\"success\":true}",
+      "key" : "integration_status_ip-172-31-7-132",
+      "lastUpdateTs" : 1706116468944,
+      "longValue" : null,
+      "strValue" : null
+    } ]
+  }
+}

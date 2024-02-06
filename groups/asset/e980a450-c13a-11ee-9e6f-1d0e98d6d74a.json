@@ -1,0 +1,44 @@
+{
+  "entityType" : "ENTITY_GROUP",
+  "entity" : {
+    "additionalInfo" : {
+      "isPublic" : true,
+      "publicCustomerId" : "e9862290-c13a-11ee-9e6f-1d0e98d6d74a"
+    },
+    "configuration" : {
+      "columns" : [ {
+        "type" : "ENTITY_FIELD",
+        "key" : "created_time",
+        "sortOrder" : "DESC"
+      }, {
+        "type" : "ENTITY_FIELD",
+        "key" : "name",
+        "sortOrder" : "NONE"
+      }, {
+        "type" : "ENTITY_FIELD",
+        "key" : "asset_profile",
+        "sortOrder" : "NONE"
+      } ],
+      "settings" : { },
+      "actions" : { }
+    },
+    "edgeGroupAll" : false,
+    "externalId" : null,
+    "groupAll" : false,
+    "id" : {
+      "entityType" : "ENTITY_GROUP",
+      "id" : "e980a450-c13a-11ee-9e6f-1d0e98d6d74a"
+    },
+    "name" : "AQI City",
+    "ownerId" : {
+      "entityType" : "TENANT",
+      "id" : "ff86cc40-d58d-11e9-8f5f-f518386fb8db"
+    },
+    "type" : "ASSET"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  },
+  "groupEntities" : true
+}

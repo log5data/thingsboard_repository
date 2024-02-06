@@ -1,0 +1,59 @@
+{
+  "entityType" : "ENTITY_GROUP",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : "T/H Sensors"
+    },
+    "configuration" : {
+      "columns" : [ {
+        "type" : "ENTITY_FIELD",
+        "key" : "created_time",
+        "sortOrder" : "DESC"
+      }, {
+        "type" : "ENTITY_FIELD",
+        "key" : "name",
+        "sortOrder" : "NONE"
+      }, {
+        "type" : "ENTITY_FIELD",
+        "key" : "type",
+        "sortOrder" : "NONE"
+      }, {
+        "type" : "ENTITY_FIELD",
+        "key" : "label",
+        "sortOrder" : "NONE"
+      } ],
+      "settings" : {
+        "groupTableTitle" : "",
+        "enableSearch" : true,
+        "enableAdd" : true,
+        "enableDelete" : true,
+        "enableSelection" : true,
+        "enableGroupTransfer" : true,
+        "detailsMode" : "onRowClick",
+        "displayPagination" : true,
+        "defaultPageSize" : 10,
+        "enableAssignment" : true,
+        "enableCredentialsManagement" : true
+      },
+      "actions" : { }
+    },
+    "edgeGroupAll" : false,
+    "externalId" : null,
+    "groupAll" : false,
+    "id" : {
+      "entityType" : "ENTITY_GROUP",
+      "id" : "9047d2c0-a116-11ea-82c8-230398f51544"
+    },
+    "name" : "Thermostats",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "type" : "DEVICE"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  },
+  "groupEntities" : true
+}

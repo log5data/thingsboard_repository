@@ -1,0 +1,326 @@
+{
+  "entityType" : "DEVICE",
+  "entity" : {
+    "additionalInfo" : null,
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "deviceData" : {
+      "configuration" : {
+        "type" : "DEFAULT"
+      },
+      "transportConfiguration" : {
+        "type" : "DEFAULT"
+      }
+    },
+    "deviceProfileId" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "079be030-7e0e-11eb-a3a9-15cc024027a0"
+    },
+    "externalId" : null,
+    "firmwareId" : null,
+    "id" : {
+      "entityType" : "DEVICE",
+      "id" : "61d06440-93cc-11ea-82c8-230398f51544"
+    },
+    "label" : "C103 C",
+    "name" : "kona18",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "softwareId" : null,
+    "type" : "thermostat"
+  },
+  "credentials" : {
+    "credentialsId" : "PmQPj3C2wS6Go6eYzFP0",
+    "credentialsType" : "ACCESS_TOKEN",
+    "credentialsValue" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "d1d26700-6480-11ea-82c8-230398f51544"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "61d06440-93cc-11ea-82c8-230398f51544"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "60f82ef0-9588-11ea-82c8-230398f51544"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "61d06440-93cc-11ea-82c8-230398f51544"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "aType",
+      "lastUpdateTs" : 1592336828419,
+      "longValue" : null,
+      "strValue" : "thermostat"
+    }, {
+      "booleanValue" : true,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "active",
+      "lastUpdateTs" : 1678378309075,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCount",
+      "lastUpdateTs" : 1707248877145,
+      "longValue" : 1,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountCriticalAck",
+      "lastUpdateTs" : 1707248877145,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountCriticalUnack",
+      "lastUpdateTs" : 1707248877145,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountMajorAck",
+      "lastUpdateTs" : 1707248877145,
+      "longValue" : 1,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "alarmsCountMajorUnack",
+      "lastUpdateTs" : 1707248877145,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "description",
+      "lastUpdateTs" : 1592336828419,
+      "longValue" : null,
+      "strValue" : "MTL1 B1 DH-E TSA C103 COLD"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "humidityCriticalDiff",
+      "lastUpdateTs" : 1592336828419,
+      "longValue" : 5,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "humidityHigh",
+      "lastUpdateTs" : 1592336828419,
+      "longValue" : 80,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "humidityHighLine",
+      "lastUpdateTs" : 1640792227752,
+      "longValue" : 70,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "humidityLow",
+      "lastUpdateTs" : 1592336828419,
+      "longValue" : 20,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "humidityLowLine",
+      "lastUpdateTs" : 1640792227752,
+      "longValue" : 20,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityAlarmTime",
+      "lastUpdateTs" : 1678297338928,
+      "longValue" : 1678297338928,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityTimeout",
+      "lastUpdateTs" : 1707248046253,
+      "longValue" : 18000000,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastActivityTime",
+      "lastUpdateTs" : 1707248046228,
+      "longValue" : 1707248046221,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "major_email",
+      "lastUpdateTs" : 1592336828419,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "major_text",
+      "lastUpdateTs" : 1592336828419,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : true,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "major_txt",
+      "lastUpdateTs" : 1592336828419,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "manufacturer",
+      "lastUpdateTs" : 1592336828419,
+      "longValue" : null,
+      "strValue" : "Kona"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "miss_fcnt_sum_daily",
+      "lastUpdateTs" : 1707195609836,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "notifyThreshold",
+      "lastUpdateTs" : 1592336828419,
+      "longValue" : 1,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "reportingFreq",
+      "lastUpdateTs" : 1707248046253,
+      "longValue" : 1800,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "tempCriticalDiff",
+      "lastUpdateTs" : 1592336828419,
+      "longValue" : 5,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "tempHigh",
+      "lastUpdateTs" : 1592336828419,
+      "longValue" : 23,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "tempLow",
+      "lastUpdateTs" : 1592336828419,
+      "longValue" : 19,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "temperatureHighLine",
+      "lastUpdateTs" : 1640792227742,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "uplink_counts",
+      "lastUpdateTs" : 1707195609915,
+      "longValue" : 48,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 0.1,
+      "jsonValue" : null,
+      "key" : "xPos",
+      "lastUpdateTs" : 1592336828419,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 0.43,
+      "jsonValue" : null,
+      "key" : "yPos",
+      "lastUpdateTs" : 1592336828419,
+      "longValue" : null,
+      "strValue" : null
+    } ],
+    "SHARED_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "batteryReportingFreq",
+      "lastUpdateTs" : 1590080447473,
+      "longValue" : 720,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "tempRHReportingFreq",
+      "lastUpdateTs" : 1590080456935,
+      "longValue" : 30,
+      "strValue" : null
+    } ]
+  }
+}

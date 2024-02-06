@@ -1,0 +1,37 @@
+{
+  "entityType" : "CUSTOMER",
+  "entity" : {
+    "additionalInfo" : null,
+    "address" : null,
+    "address2" : null,
+    "city" : null,
+    "country" : null,
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "email" : null,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "CUSTOMER",
+      "id" : "ad8381d0-907d-11ea-82c8-230398f51544"
+    },
+    "name" : "Customer A100",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "parentCustomerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "phone" : null,
+    "state" : null,
+    "title" : "Customer A100",
+    "zip" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

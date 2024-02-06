@@ -1,0 +1,162 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : false,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "ac430080-dec1-11ed-af84-a9f24bcd8f0a"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "170a2a70-dec1-11ed-af84-a9f24bcd8f0a"
+    },
+    "name" : "Reporting Frequency Calc",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 1,
+      "type" : "True"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 2,
+      "type" : "True"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 4,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 0,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 233,
+        "layoutY" : 241
+      },
+      "configuration" : {
+        "jsScript" : "return (msg.miss_fcnt === 0 && msg.delta_count === 1);"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ac430080-dec1-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "no fcnt miss",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 412,
+        "layoutY" : 338
+      },
+      "configuration" : {
+        "jsScript" : "return metadata.deviceType != 'gateway';"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ac4375b0-dec1-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "gateway filter",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 588,
+        "layoutY" : 432
+      },
+      "configuration" : {
+        "inputValueKey" : "ts",
+        "outputValueKey" : "delta_ts",
+        "useCache" : true,
+        "addPeriodBetweenMsgs" : false,
+        "periodValueKey" : "periodInMs",
+        "round" : null,
+        "tellFailureIfDeltaIsNegative" : true
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ac43c3d0-dec1-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "delta ts",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.CalculateDeltaNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 771,
+        "layoutY" : 527
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\nvar reportingFreq = Math.round(msg.delta_ts/1000);\nswitch ((reportingFreq).toString().length) {\n    case 5:\n        newMsg.reportingFreq = Math.round(reportingFreq/100)*100;\n        break;\n    case 4:\n        newMsg.reportingFreq = Math.round(reportingFreq/100)*100;\n        break;\n    case 3:\n        newMsg.reportingFreq = Math.round(reportingFreq/100)*100;\n        break;\n    case 2:\n        newMsg.reportingFreq = Math.round(reportingFreq/10)*10;\n        break;\n    case 1:\n        break;\n    default:\n        newMsg.reportingFreq = reportingFreq;\n        break;\n}\nvar sensorInactMultiplier = 10;\nif (metadata.ss_sensorInactMultiplier != undefined) {\n    sensorInactMultiplier = metadata.ss_sensorInactMultiplier;\n}\nvar inactivityTimeout = parseInt(sensorInactMultiplier) * parseInt(newMsg.reportingFreq) * 1000;\nif (inactivityTimeout < 3600000) {\n    inactivityTimeout = 3600000;\n}\nnewMsg.inactivityTimeout = inactivityTimeout;\nvar newMsgType = 'POST_ATTRIBUTES_REQUEST';\n/*Sometimes delta_ts isn't reasonable, probably Thingsboard cached value isn't right.*/\n/*If this happens, discard this message.*/\nif (reportingFreq > 3600 * sensorInactMultiplier) {\n    newMsg = {};\n}\nreturn {msg: newMsg, metadata: metadata, msgType: newMsgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ac43eae0-dec1-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "calc reporting frequency(seconds)",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 954,
+        "layoutY" : 625
+      },
+      "configuration" : {
+        "scope" : "SERVER_SCOPE",
+        "notifyDevice" : false,
+        "sendAttributesUpdatedNotification" : false,
+        "updateAttributesOnlyOnValueChange" : false
+      },
+      "configurationVersion" : 2,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ac4411f0-dec1-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "save reporting frequency",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

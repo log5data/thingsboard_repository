@@ -1,0 +1,104 @@
+{
+  "entityType" : "INTEGRATION",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "allowCreateDevicesOrAssets" : true,
+    "configuration" : {
+      "clientConfiguration" : {
+        "host" : "things.log5data.com",
+        "port" : 8883,
+        "cleanSession" : false,
+        "ssl" : true,
+        "connectTimeoutSec" : 10,
+        "clientId" : "dcsGlobalSatTTS",
+        "maxBytesInMessage" : 32368,
+        "credentials" : {
+          "type" : "basic",
+          "username" : "global-sat",
+          "password" : "NNSXS.ZL6TMYAQJBY3IFKDPUSBRN4X3DJ3MQWXFOH5DBI.UJERDXVYBFQFNPEL6FDE3JTVMPKCSZDOD4PPQS6H5MXNBMPWK26Q"
+        }
+      },
+      "downlinkTopicPattern" : "${topic}",
+      "topicFilters" : [ {
+        "filter" : "v3/global-sat/devices/+/up",
+        "qos" : 0
+      } ],
+      "metadata" : { }
+    },
+    "debugMode" : false,
+    "defaultConverterId" : {
+      "entityType" : "CONVERTER",
+      "id" : "68cd35a0-2c35-11eb-8887-e94257e8a11b"
+    },
+    "downlinkConverterId" : {
+      "entityType" : "CONVERTER",
+      "id" : "f1b880f0-896e-11ea-82c8-230398f51544"
+    },
+    "edgeTemplate" : false,
+    "enabled" : false,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "INTEGRATION",
+      "id" : "07094bf0-6481-11ea-82c8-230398f51544"
+    },
+    "name" : "GlobalSat-TTS",
+    "remote" : false,
+    "routingKey" : "8537510eb653618448854fae99229b5e",
+    "secret" : "pusqbddvw6kcxpatqosn",
+    "type" : "MQTT"
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "07094bf0-6481-11ea-82c8-230398f51544"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "352a4250-9bd6-11ea-82c8-230398f51544"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "07094bf0-6481-11ea-82c8-230398f51544"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "3a6af780-6488-11ea-82c8-230398f51544"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "07094bf0-6481-11ea-82c8-230398f51544"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "41d61361-6488-11ea-82c8-230398f51544"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "07094bf0-6481-11ea-82c8-230398f51544"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "5c9b7840-8e51-11eb-998f-ef51e5816eb8"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "entityType" : "TB_RESOURCE",
+  "entity" : {
+    "customerId" : null,
+    "data" : "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",
+    "descriptor" : {
+      "mediaType" : "image/png",
+      "width" : 150,
+      "height" : 157,
+      "size" : 1687,
+      "etag" : "81a7e766fb0e6f92aa87c57a39f40b6cfe608c2fc7df0249e99dadff4f11baf9",
+      "previewDescriptor" : {
+        "mediaType" : "image/png",
+        "width" : 150,
+        "height" : 157,
+        "size" : 1687,
+        "etag" : "81a7e766fb0e6f92aa87c57a39f40b6cfe608c2fc7df0249e99dadff4f11baf9"
+      }
+    },
+    "etag" : "81a7e766fb0e6f92aa87c57a39f40b6cfe608c2fc7df0249e99dadff4f11baf9",
+    "externalId" : null,
+    "fileName" : "map_marker_image_5.png",
+    "id" : {
+      "entityType" : "TB_RESOURCE",
+      "id" : "be0be9c0-badb-11ee-8f3c-ef9f31070ab4"
+    },
+    "link" : "/api/images/tenant/map_marker_image_5.png",
+    "name" : "Map marker image 5",
+    "preview" : null,
+    "public" : true,
+    "publicLink" : "/api/images/public/fEs4mK7QvhT5GNdnaORjr5P8AzWNoqqU",
+    "publicResourceKey" : "fEs4mK7QvhT5GNdnaORjr5P8AzWNoqqU",
+    "resourceKey" : "map_marker_image_5.png",
+    "resourceType" : "IMAGE",
+    "title" : "Map marker image 5"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

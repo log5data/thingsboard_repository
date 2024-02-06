@@ -1,0 +1,314 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : null,
+    "configuration" : null,
+    "debugMode" : true,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "b9edfc30-6ebc-11ea-82c8-230398f51544"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "b9e34dd0-6ebc-11ea-82c8-230398f51544"
+    },
+    "name" : "Delta Temperature and Humidity",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 1,
+      "toIndex" : 2,
+      "type" : "front"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 3,
+      "type" : "back"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 5,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 6,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 7,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 8,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 8,
+      "toIndex" : 10,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 0,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 1,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 9,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "layoutX" : 526,
+        "layoutY" : 49
+      },
+      "configuration" : {
+        "jsScript" : "return 'Incoming message - failure to get cabinet position attribute:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "8bb938e0-d369-11ea-b8b6-f3024ac1a0a4"
+      },
+      "name" : "Log failure",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbLogNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 344,
+        "layoutY" : 256
+      },
+      "configuration" : {
+        "jsScript" : "\nfunction nextRelation(metadata, msg) {\n    if (typeof metadata.ss_cabinetPosition != 'undefined')\n    \tif (metadata.ss_cabinetPosition === 'Front') {\n    \t\treturn ['Front'];\n    \t} else if (metadata.ss_cabinetPosition === 'Back')\n    \t\treturn ['Back'];\n    }\n        \n    return nextRelation(metadata, msg);"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b9eaeef0-6ebc-11ea-82c8-230398f51544"
+      },
+      "name" : "Switch by cabinetPosition",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 593,
+        "layoutY" : 183
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\r\n               \r\nnewMsg.frontTemperature = msg.temperature;\r\nnewMsg.frontHumidity = msg.humidity;\r\n               \r\nreturn {\r\n    msg: newMsg, \r\n    metadata: metadata,\r\n    msgType: msgType\r\n    };"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b9eb6420-6ebc-11ea-82c8-230398f51544"
+      },
+      "name" : "Change to frontTemperature/Humidity",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 597,
+        "layoutY" : 334
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\r\n               \r\nnewMsg.backTemperature = msg.temperature;\r\nnewMsg.backHumidity = msg.humidity;\r\n               \r\nreturn {\r\n    msg: newMsg, \r\n    metadata: metadata,\r\n    msgType: msgType\r\n    };"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b9ebb240-6ebc-11ea-82c8-230398f51544"
+      },
+      "name" : "Change to backTemperature",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 871,
+        "layoutY" : 258
+      },
+      "configuration" : {
+        "originatorSource" : "RELATED",
+        "relationsQuery" : {
+          "direction" : "TO",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ "ASSET" ]
+          } ],
+          "fetchLastLevelOnly" : false
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b9ec0060-6ebc-11ea-82c8-230398f51544"
+      },
+      "name" : "Change Originator to Asset",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 1180,
+        "layoutY" : 258
+      },
+      "configuration" : {
+        "defaultTTL" : 0
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b9ec7590-6ebc-11ea-82c8-230398f51544"
+      },
+      "name" : "Save front/back Temp/humidity on Cabinet",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 498,
+        "layoutY" : 474
+      },
+      "configuration" : {
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ ],
+        "latestTsKeyNames" : [ "frontTemperature", "backTemperature", "frontHumidity", "backHumidity" ],
+        "tellFailureIfAbsent" : true,
+        "fetchTo" : "METADATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b9ecc3b0-6ebc-11ea-82c8-230398f51544"
+      },
+      "name" : "Fetch Latest front & back Temp",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 795,
+        "layoutY" : 475
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\r\n        \r\nnewMsg.deltaTemperature = parseFloat(metadata.backTemperature - metadata.frontTemperature).toFixed(2);\r\n \r\nnewMsg.deltaHumidity = parseFloat(metadata.frontHumidity - metadata.backHumidity).toFixed(2);       \r\nreturn {\r\n\tmsg: newMsg,\r\n\tmetadata: metadata,\r\n\tmsgType: msgType\r\n    };"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b9ed11d0-6ebc-11ea-82c8-230398f51544"
+      },
+      "name" : "Calculate Delta Temperature/Humidity",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 1111,
+        "layoutY" : 476
+      },
+      "configuration" : {
+        "defaultTTL" : 0
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b9ed8700-6ebc-11ea-82c8-230398f51544"
+      },
+      "name" : "Save deltaTemperature/Humidity on Asset",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 281,
+        "layoutY" : 151
+      },
+      "configuration" : {
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "cabinetPosition" ],
+        "latestTsKeyNames" : [ ],
+        "tellFailureIfAbsent" : true,
+        "fetchTo" : "METADATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "b9edfc30-6ebc-11ea-82c8-230398f51544"
+      },
+      "name" : "get Device cabinetPosition",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 1394,
+        "layoutY" : 477,
+        "ruleChainNodeId" : "rule-chain-node-12"
+      },
+      "configuration" : {
+        "ruleChainId" : "73e83c20-3101-11eb-8887-e94257e8a11b"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0b011390-b6e5-11ee-b88b-791a828c489c"
+      },
+      "name" : "New Incoming Telemetry Handling",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

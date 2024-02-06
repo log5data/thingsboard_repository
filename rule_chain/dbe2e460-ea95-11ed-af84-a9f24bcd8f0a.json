@@ -1,0 +1,1058 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : true,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "ebf55cf0-eaa6-11ed-af84-a9f24bcd8f0a"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "dbe2e460-ea95-11ed-af84-a9f24bcd8f0a"
+    },
+    "name" : "Data Retrieval Process - Dragino",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 21,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 21,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 21,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 21,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 21,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 21,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 21,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 21,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 8,
+      "toIndex" : 21,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 21,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 10,
+      "toIndex" : 22,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 11,
+      "toIndex" : 22,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 12,
+      "toIndex" : 22,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 13,
+      "toIndex" : 22,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 14,
+      "toIndex" : 22,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 15,
+      "toIndex" : 22,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 16,
+      "toIndex" : 22,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 17,
+      "toIndex" : 22,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 18,
+      "toIndex" : 22,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 19,
+      "toIndex" : 22,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 20,
+      "toIndex" : 22,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 21,
+      "toIndex" : 32,
+      "type" : "False"
+    }, {
+      "fromIndex" : 22,
+      "toIndex" : 32,
+      "type" : "False"
+    }, {
+      "fromIndex" : 23,
+      "toIndex" : 30,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 24,
+      "toIndex" : 34,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 25,
+      "toIndex" : 27,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 27,
+      "toIndex" : 26,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 0,
+      "type" : "True"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 1,
+      "type" : "True"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 2,
+      "type" : "True"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 3,
+      "type" : "True"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 4,
+      "type" : "True"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 5,
+      "type" : "True"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 6,
+      "type" : "True"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 7,
+      "type" : "True"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 8,
+      "type" : "True"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 9,
+      "type" : "True"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 10,
+      "type" : "True"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 11,
+      "type" : "True"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 12,
+      "type" : "True"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 13,
+      "type" : "True"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 14,
+      "type" : "True"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 15,
+      "type" : "True"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 16,
+      "type" : "True"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 17,
+      "type" : "True"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 18,
+      "type" : "True"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 19,
+      "type" : "True"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 20,
+      "type" : "True"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 29,
+      "type" : "True"
+    }, {
+      "fromIndex" : 28,
+      "toIndex" : 31,
+      "type" : "True"
+    }, {
+      "fromIndex" : 29,
+      "toIndex" : 21,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 30,
+      "toIndex" : 33,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 31,
+      "toIndex" : 24,
+      "type" : "True"
+    }, {
+      "fromIndex" : 32,
+      "toIndex" : 23,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 34,
+      "toIndex" : 25,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 34,
+      "toIndex" : 25,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 28,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 446,
+        "layoutY" : 142
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\nif (msg.retrieval_data_2_Ts != undefined) {\n    newMsg.humidity = msg.retrieval_data_2_Hum_SHT,\n    newMsg.temperatureProbe = msg.retrieval_data_2_TempC_DS,\n    newMsg.temperature = msg.retrieval_data_2_TempC_SHT,\n    newMsg.retrieved = true,\n    metadata.ts = msg.retrieval_data_2_Ts;\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "93726860-eaa7-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Msg Split 2",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 489,
+        "layoutY" : 184
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\nif (msg.retrieval_data_3_Ts != undefined) {\n    newMsg.humidity = msg.retrieval_data_3_Hum_SHT,\n    newMsg.temperatureProbe = msg.retrieval_data_3_TempC_DS,\n    newMsg.temperature = msg.retrieval_data_3_TempC_SHT,\n    newMsg.retrieved = true,\n    metadata.ts = msg.retrieval_data_3_Ts;\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "9372dd90-eaa7-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Msg Split 3",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 521,
+        "layoutY" : 226
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\nif (msg.retrieval_data_4_Ts != undefined) {\n    newMsg.humidity = msg.retrieval_data_4_Hum_SHT,\n    newMsg.temperatureProbe = msg.retrieval_data_4_TempC_DS,\n    newMsg.temperature = msg.retrieval_data_4_TempC_SHT,\n    newMsg.retrieved = true,\n    metadata.ts = msg.retrieval_data_4_Ts;\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "937304a0-eaa7-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Msg Split 4",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 554,
+        "layoutY" : 268
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\nif (msg.retrieval_data_5_Ts != undefined) {\n    newMsg.humidity = msg.retrieval_data_5_Hum_SHT,\n    newMsg.temperatureProbe = msg.retrieval_data_5_TempC_DS,\n    newMsg.temperature = msg.retrieval_data_5_TempC_SHT,\n    newMsg.retrieved = true,\n    metadata.ts = msg.retrieval_data_5_Ts;\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "93732bb0-eaa7-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Msg Split 5",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 587,
+        "layoutY" : 310
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\nif (msg.retrieval_data_6_Ts != undefined) {\n    newMsg.humidity = msg.retrieval_data_6_Hum_SHT,\n    newMsg.temperatureProbe = msg.retrieval_data_6_TempC_DS,\n    newMsg.temperature = msg.retrieval_data_6_TempC_SHT,\n    newMsg.retrieved = true,\n    metadata.ts = msg.retrieval_data_6_Ts;\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "937379d0-eaa7-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Msg Split 6",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 626,
+        "layoutY" : 354
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\nif (msg.retrieval_data_7_Ts != undefined) {\n    newMsg.humidity = msg.retrieval_data_7_Hum_SHT,\n    newMsg.temperatureProbe = msg.retrieval_data_7_TempC_DS,\n    newMsg.temperature = msg.retrieval_data_7_TempC_SHT,\n    newMsg.retrieved = true,\n    metadata.ts = msg.retrieval_data_7_Ts;\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "9373a0e0-eaa7-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Msg Split 7",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 658,
+        "layoutY" : 396
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\nif (msg.retrieval_data_8_Ts != undefined) {\n    newMsg.humidity = msg.retrieval_data_8_Hum_SHT,\n    newMsg.temperatureProbe = msg.retrieval_data_8_TempC_DS,\n    newMsg.temperature = msg.retrieval_data_8_TempC_SHT,\n    newMsg.retrieved = true,\n    metadata.ts = msg.retrieval_data_8_Ts;\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "9373c7f0-eaa7-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Msg Split 8",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 692,
+        "layoutY" : 439
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\nif (msg.retrieval_data_9_Ts != undefined) {\n    newMsg.humidity = msg.retrieval_data_9_Hum_SHT,\n    newMsg.temperatureProbe = msg.retrieval_data_9_TempC_DS,\n    newMsg.temperature = msg.retrieval_data_9_TempC_SHT,\n    newMsg.retrieved = true,\n    metadata.ts = msg.retrieval_data_9_Ts;\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "93741610-eaa7-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Msg Split 9",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 726,
+        "layoutY" : 481
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\nif (msg.retrieval_data_10_Ts != undefined) {\n    newMsg.humidity = msg.retrieval_data_10_Hum_SHT,\n    newMsg.temperatureProbe = msg.retrieval_data_10_TempC_DS,\n    newMsg.temperature = msg.retrieval_data_10_TempC_SHT,\n    newMsg.retrieved = true,\n    metadata.ts = msg.retrieval_data_10_Ts;\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "93743d20-eaa7-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Msg Split 10",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 757,
+        "layoutY" : 524
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\nif (msg.retrieval_data_11_Ts != undefined) {\n    newMsg.humidity = msg.retrieval_data_11_Hum_SHT,\n    newMsg.temperatureProbe = msg.retrieval_data_11_TempC_DS,\n    newMsg.temperature = msg.retrieval_data_11_TempC_SHT,\n    newMsg.retrieved = true,\n    metadata.ts = msg.retrieval_data_11_Ts;\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "93748b40-eaa7-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Msg Split 11",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 756,
+        "layoutY" : 569
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\nif (msg.retrieval_data_12_Ts != undefined) {\n    newMsg.humidity = msg.retrieval_data_12_Hum_SHT,\n    newMsg.temperatureProbe = msg.retrieval_data_12_TempC_DS,\n    newMsg.temperature = msg.retrieval_data_12_TempC_SHT,\n    newMsg.retrieved = true,\n    metadata.ts = msg.retrieval_data_12_Ts;\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "9374b250-eaa7-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Msg Split 12",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 722,
+        "layoutY" : 613
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\nif (msg.retrieval_data_1_Ts != undefined) {\n    newMsg.humidity = msg.retrieval_data_13_Hum_SHT,\n    newMsg.temperatureProbe = msg.retrieval_data_13_TempC_DS,\n    newMsg.temperature = msg.retrieval_data_13_TempC_SHT,\n    newMsg.retrieved = true,\n    metadata.ts = msg.retrieval_data_13_Ts;\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "9374d960-eaa7-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Msg Split 13",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 690,
+        "layoutY" : 657
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\nif (msg.retrieval_data_14_Ts != undefined) {\n    newMsg.humidity = msg.retrieval_data_14_Hum_SHT,\n    newMsg.temperatureProbe = msg.retrieval_data_14_TempC_DS,\n    newMsg.temperature = msg.retrieval_data_14_TempC_SHT,\n    newMsg.retrieved = true,\n    metadata.ts = msg.retrieval_data_14_Ts;\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "93750070-eaa7-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Msg Split 14",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 655,
+        "layoutY" : 701
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\nif (msg.retrieval_data_15_Ts != undefined) {\n    newMsg.humidity = msg.retrieval_data_15_Hum_SHT,\n    newMsg.temperatureProbe = msg.retrieval_data_15_TempC_DS,\n    newMsg.temperature = msg.retrieval_data_15_TempC_SHT,\n    newMsg.retrieved = true,\n    metadata.ts = msg.retrieval_data_15_Ts;\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "93752780-eaa7-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Msg Split 15",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 621,
+        "layoutY" : 746
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\nif (msg.retrieval_data_16_Ts != undefined) {\n    newMsg.humidity = msg.retrieval_data_16_Hum_SHT,\n    newMsg.temperatureProbe = msg.retrieval_data_16_TempC_DS,\n    newMsg.temperature = msg.retrieval_data_16_TempC_SHT,\n    newMsg.retrieved = true,\n    metadata.ts = msg.retrieval_data_16_Ts;\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "937575a0-eaa7-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Msg Split 16",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 593,
+        "layoutY" : 790
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\nif (msg.retrieval_data_17_Ts != undefined) {\n    newMsg.humidity = msg.retrieval_data_17_Hum_SHT,\n    newMsg.temperatureProbe = msg.retrieval_data_17_TempC_DS,\n    newMsg.temperature = msg.retrieval_data_17_TempC_SHT,\n    newMsg.retrieved = true,\n    metadata.ts = msg.retrieval_data_17_Ts;\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "93759cb0-eaa7-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Msg Split 17",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 561,
+        "layoutY" : 833
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\nif (msg.retrieval_data_18_Ts != undefined) {\n    newMsg.humidity = msg.retrieval_data_18_Hum_SHT,\n    newMsg.temperatureProbe = msg.retrieval_data_18_TempC_DS,\n    newMsg.temperature = msg.retrieval_data_18_TempC_SHT,\n    newMsg.retrieved = true,\n    metadata.ts = msg.retrieval_data_18_Ts;\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "9375c3c0-eaa7-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Msg Split 18",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 533,
+        "layoutY" : 877
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\nif (msg.retrieval_data_19_Ts != undefined) {\n    newMsg.humidity = msg.retrieval_data_19_Hum_SHT,\n    newMsg.temperatureProbe = msg.retrieval_data_19_TempC_DS,\n    newMsg.temperature = msg.retrieval_data_19_TempC_SHT,\n    newMsg.retrieved = true,\n    metadata.ts = msg.retrieval_data_19_Ts;\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "937611e0-eaa7-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Msg Split 19",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 502,
+        "layoutY" : 921
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\nif (msg.retrieval_data_20_Ts != undefined) {\n    newMsg.humidity = msg.retrieval_data_20_Hum_SHT,\n    newMsg.temperatureProbe = msg.retrieval_data_20_TempC_DS,\n    newMsg.temperature = msg.retrieval_data_20_TempC_SHT,\n    newMsg.retrieved = true,\n    metadata.ts = msg.retrieval_data_20_Ts;\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "937638f0-eaa7-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Msg Split 20",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 469,
+        "layoutY" : 966
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\nif (msg.retrieval_data_21_Ts != undefined) {\n    newMsg.humidity = msg.retrieval_data_21_Hum_SHT,\n    newMsg.temperatureProbe = msg.retrieval_data_21_TempC_DS,\n    newMsg.temperature = msg.retrieval_data_21_TempC_SHT,\n    newMsg.retrieved = true,\n    metadata.ts = msg.retrieval_data_21_Ts;\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "93768710-eaa7-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Msg Split 21",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 442,
+        "layoutY" : 1009
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\nif (msg.retrieval_data_22_Ts != undefined) {\n    newMsg.humidity = msg.retrieval_data_22_Hum_SHT,\n    newMsg.temperatureProbe = msg.retrieval_data_22_TempC_DS,\n    newMsg.temperature = msg.retrieval_data_22_TempC_SHT,\n    newMsg.retrieved = true,\n    metadata.ts = msg.retrieval_data_22_Ts;\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "9376ae20-eaa7-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Msg Split 22",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 854,
+        "layoutY" : 132
+      },
+      "configuration" : {
+        "jsScript" : "return (msg.temperature == undefined && msg.humidity == undefined);\n//return JSON.stringify(msg) === '{}';"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "9e499b30-eaa9-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Filter Empty Msg",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 857,
+        "layoutY" : 924
+      },
+      "configuration" : {
+        "jsScript" : "return (msg.temperature == undefined && msg.humidity == undefined);\n//return JSON.stringify(msg) === '{}';"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "9e49e950-eaa9-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Filter Empty Msg",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1155,
+        "layoutY" : 452
+      },
+      "configuration" : {
+        "originatorSource" : "RELATED",
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "TO",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ "ASSET" ]
+          } ]
+        }
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "bc4581c0-74f7-11ee-b451-6be2d47cc191"
+      },
+      "name" : "Changed to Asset",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 642,
+        "layoutY" : 1054
+      },
+      "configuration" : {
+        "dataMapping" : {
+          "slackNotify" : "slackNotify",
+          "slackUrl" : "cu_slackUrl"
+        },
+        "dataToFetch" : "ATTRIBUTES",
+        "fetchTo" : "METADATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "bfaa5770-79b4-11ee-b451-6be2d47cc191"
+      },
+      "name" : "Get Slack Notif Urls",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetCustomerAttributeNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1198,
+        "layoutY" : 1055
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\r\nvar retrieved_number = 0;\r\nvar retrieved_text = '';\r\n\r\nif (msg.retrieval_data_22_Ts != undefined) {\r\n    retrieved_number = 22;\r\n} else if (msg.retrieval_data_21_Ts != undefined) {\r\n    retrieved_number = 21;\r\n} else if (msg.retrieval_data_20_Ts != undefined) {\r\n    retrieved_number = 20;\r\n} else if (msg.retrieval_data_19_Ts != undefined) {\r\n    retrieved_number = 19;\r\n} else if (msg.retrieval_data_18_Ts != undefined) {\r\n    retrieved_number = 18;\r\n} else if (msg.retrieval_data_17_Ts != undefined) {\r\n    retrieved_number = 17;\r\n} else if (msg.retrieval_data_16_Ts != undefined) {\r\n    retrieved_number = 16;\r\n} else if (msg.retrieval_data_15_Ts != undefined) {\r\n    retrieved_number = 15;\r\n} else if (msg.retrieval_data_14_Ts != undefined) {\r\n    retrieved_number = 14;\r\n} else if (msg.retrieval_data_13_Ts != undefined) {\r\n    retrieved_number = 13;\r\n} else if (msg.retrieval_data_12_Ts != undefined) {\r\n    retrieved_number = 12;\r\n} else if (msg.retrieval_data_11_Ts != undefined) {\r\n    retrieved_number = 11;\r\n} else if (msg.retrieval_data_10_Ts != undefined) {\r\n    retrieved_number = 10;\r\n} else if (msg.retrieval_data_9_Ts != undefined) {\r\n    retrieved_number = 9;\r\n} else if (msg.retrieval_data_8_Ts != undefined) {\r\n    retrieved_number = 8;\r\n} else if (msg.retrieval_data_7_Ts != undefined) {\r\n    retrieved_number = 7;\r\n} else if (msg.retrieval_data_6_Ts != undefined) {\r\n    retrieved_number = 6;\r\n} else if (msg.retrieval_data_5_Ts != undefined) {\r\n    retrieved_number = 5;\r\n} else if (msg.retrieval_data_4_Ts != undefined) {\r\n    retrieved_number = 4;\r\n} else if (msg.retrieval_data_3_Ts != undefined) {\r\n    retrieved_number = 3;\r\n} else if (msg.retrieval_data_2_Ts != undefined) {\r\n    retrieved_number = 2;\r\n} else if (msg.retrieval_data_1_Ts != undefined) {\r\n    retrieved_number = 1;\r\n}\r\n\r\nif (retrieved_number === 1) {\r\n    retrieved_text = String(retrieved_number) + ' record';\r\n} else {\r\n    retrieved_text = String(retrieved_number) + ' records';\r\n}\r\n\r\nif (retrieved_number > 0) {\r\n    newMsg.text = 'Device \"' + metadata.deviceName + '\" retrieved ' + retrieved_text + ' recently!';\r\n}\r\n\r\nreturn {\r\n    msg: newMsg,\r\n    metadata: metadata,\r\n    msgType: msgType\r\n};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "bfaaa590-79b4-11ee-b451-6be2d47cc191"
+      },
+      "name" : "Construct Slack Notify",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1699,
+        "layoutY" : 1054
+      },
+      "configuration" : {
+        "restEndpointUrlPattern" : "${slackNotify} ",
+        "requestMethod" : "POST",
+        "useSimpleClientHttpFactory" : false,
+        "enableProxy" : false,
+        "useSystemProxyProperties" : false,
+        "proxyScheme" : null,
+        "proxyHost" : null,
+        "proxyPort" : 0,
+        "proxyUser" : null,
+        "proxyPassword" : null,
+        "readTimeoutMs" : 0,
+        "maxParallelRequestsCount" : 0,
+        "headers" : {
+          "Content-Type" : "application/json"
+        },
+        "useRedisQueueForMsgPersistence" : false,
+        "trimQueue" : false,
+        "maxQueueSize" : 0,
+        "credentials" : {
+          "type" : "anonymous"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "bfaaf3b0-79b4-11ee-b451-6be2d47cc191"
+      },
+      "name" : "slack integration",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1443,
+        "layoutY" : 1055
+      },
+      "configuration" : {
+        "jsScript" : "var slackUrls = metadata.slackNotify.split(\",\");\nvar slackNotifyLevel;\n\nif (metadata.cu_slackUrl != undefined) {\n    slackNotifyLevel = metadata.cu_slackUrl;\n} else if (metadata.as_slackUrl != undefined) {\n    slackNotifyLevel = metadata.as_slackUrl;\n} else if (metadata.ss_slackUrl != undefined) {\n    slackNotifyLevel = metadata.ss_slackUrl;\n} else {\n    slackNotifyLevel = 0;\n}\n\nswitch (slackNotifyLevel) {\n    case \"1\":\n        metadata.slackNotify = slackUrls[0].trim();\n        break;\n    case \"2\":\n         metadata.slackNotify = slackUrls[1].trim();\n         break;\n    case \"3\":\n        metadata.slackNotify = slackUrls[2].trim();\n        break;\n    default:\n        metadata.slackNotify = slackUrls[0].trim();\n}\n\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "cf9ab940-7d0b-11ee-b451-6be2d47cc191"
+      },
+      "name" : "Slack Urls",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 177,
+        "layoutY" : 541
+      },
+      "configuration" : {
+        "jsScript" : "return msg.retrieval_data_1_Ts != undefined;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ebf55cf0-eaa6-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Check Retrieval Data",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 395,
+        "layoutY" : 98
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {};\nif (msg.retrieval_data_1_Ts != undefined) {\n    newMsg.humidity = msg.retrieval_data_1_Hum_SHT,\n    newMsg.temperatureProbe = msg.retrieval_data_1_TempC_DS,\n    newMsg.temperature = msg.retrieval_data_1_TempC_SHT,\n    newMsg.retrieved = true,\n    metadata.ts = msg.retrieval_data_1_Ts;\n}\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ee70a1b0-ea9c-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Msg Split 1",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1316,
+        "layoutY" : 362
+      },
+      "configuration" : {
+        "inputValueKey" : "retrieved ",
+        "outputValueKey" : "retrieved_count",
+        "mathFunction" : "COUNT",
+        "aggIntervalType" : "DAY",
+        "timeZoneId" : "America/New_York",
+        "aggIntervalValue" : 1,
+        "aggIntervalTimeUnit" : "HOURS",
+        "intervalPersistencePolicy" : "ON_EACH_CHECK_AFTER_INTERVAL_END",
+        "intervalCheckValue" : 1,
+        "intervalCheckTimeUnit" : "MINUTES",
+        "statePersistencePolicy" : "ON_EACH_CHANGE",
+        "statePersistenceValue" : 1,
+        "statePersistenceTimeUnit" : "MINUTES",
+        "autoCreateIntervals" : false,
+        "periodValue" : 5,
+        "periodTimeUnit" : "MINUTES",
+        "parentEntitiesQuery" : {
+          "type" : "group",
+          "entityGroupId" : null
+        },
+        "outMsgType" : "POST_TELEMETRY_REQUEST"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "1afbb900-74f8-11ee-b451-6be2d47cc191"
+      },
+      "name" : "retrieved aggregation",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.analytics.incoming.TbSimpleAggMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 401,
+        "layoutY" : 1054
+      },
+      "configuration" : {
+        "jsScript" : "return metadata.ss_slackRetrievalNotify == \"true\";"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "1b1f8ab0-7f2a-11ee-b451-6be2d47cc191"
+      },
+      "name" : "Slack Notification Switch",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1000,
+        "layoutY" : 548
+      },
+      "configuration" : {
+        "defaultTTL" : 0
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "244efe50-eaaa-11ed-af84-a9f24bcd8f0a"
+      },
+      "name" : "Save Timeseries",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1487,
+        "layoutY" : 269
+      },
+      "configuration" : {
+        "defaultTTL" : 0
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "2bd67350-74f8-11ee-b451-6be2d47cc191"
+      },
+      "name" : "Save Timeseries",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 888,
+        "layoutY" : 1053
+      },
+      "configuration" : {
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "TO",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ "ASSET" ]
+          } ]
+        },
+        "dataMapping" : {
+          "slackUrl" : "as_slackUrl"
+        },
+        "dataToFetch" : "ATTRIBUTES",
+        "fetchTo" : "METADATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "66395b30-7e5c-11ee-b451-6be2d47cc191"
+      },
+      "name" : "Get Asset Slack Notif Urls",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

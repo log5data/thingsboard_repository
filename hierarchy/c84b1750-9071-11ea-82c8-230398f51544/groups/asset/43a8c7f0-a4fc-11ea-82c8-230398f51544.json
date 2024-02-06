@@ -1,0 +1,59 @@
+{
+  "entityType" : "ENTITY_GROUP",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : "Delta T/H Assets (Typically has relations [containts] to 2 T/H devices)"
+    },
+    "configuration" : {
+      "columns" : [ {
+        "type" : "ENTITY_FIELD",
+        "key" : "created_time",
+        "sortOrder" : "DESC"
+      }, {
+        "type" : "ENTITY_FIELD",
+        "key" : "name",
+        "sortOrder" : "NONE"
+      }, {
+        "type" : "ENTITY_FIELD",
+        "key" : "label",
+        "sortOrder" : "NONE",
+        "mobileHide" : false
+      }, {
+        "type" : "ENTITY_FIELD",
+        "key" : "type",
+        "sortOrder" : "NONE"
+      } ],
+      "settings" : {
+        "groupTableTitle" : "",
+        "enableSearch" : true,
+        "enableAdd" : true,
+        "enableDelete" : true,
+        "enableSelection" : true,
+        "enableGroupTransfer" : true,
+        "detailsMode" : "onRowClick",
+        "displayPagination" : true,
+        "defaultPageSize" : 10,
+        "enableAssignment" : true
+      },
+      "actions" : { }
+    },
+    "edgeGroupAll" : false,
+    "externalId" : null,
+    "groupAll" : false,
+    "id" : {
+      "entityType" : "ENTITY_GROUP",
+      "id" : "43a8c7f0-a4fc-11ea-82c8-230398f51544"
+    },
+    "name" : "Cabinets",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "type" : "ASSET"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  },
+  "groupEntities" : true
+}

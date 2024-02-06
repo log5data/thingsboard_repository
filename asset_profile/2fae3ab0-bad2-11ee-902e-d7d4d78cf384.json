@@ -1,0 +1,22 @@
+{
+  "entityType" : "ASSET_PROFILE",
+  "entity" : {
+    "default" : false,
+    "defaultDashboardId" : null,
+    "defaultEdgeRuleChainId" : null,
+    "defaultQueueName" : null,
+    "defaultRuleChainId" : null,
+    "description" : "Default asset profile",
+    "externalId" : null,
+    "id" : {
+      "entityType" : "ASSET_PROFILE",
+      "id" : "2fae3ab0-bad2-11ee-902e-d7d4d78cf384"
+    },
+    "image" : null,
+    "name" : "cabinet"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

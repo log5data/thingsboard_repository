@@ -1,0 +1,112 @@
+{
+  "entityType" : "INTEGRATION",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "allowCreateDevicesOrAssets" : true,
+    "configuration" : {
+      "clientConfiguration" : {
+        "host" : "things.log5data.com",
+        "port" : 8883,
+        "cleanSession" : false,
+        "ssl" : true,
+        "connectTimeoutSec" : 10,
+        "clientId" : "dcsMCCIDustTTS",
+        "maxBytesInMessage" : 32368,
+        "credentials" : {
+          "type" : "basic",
+          "username" : "mcci-dust",
+          "password" : "NNSXS.DFUCYCYNHUABG6LNYKBAX6XOFDIMKKDERF6DXWQ.EK2DRNY22JB7SJ6PLBSELRDBIK4X36ZOVD6DJJ5GJCSEYDJCGLNQ"
+        }
+      },
+      "downlinkTopicPattern" : "${topic}",
+      "topicFilters" : [ {
+        "filter" : "v3/mcci-dust/devices/+/up",
+        "qos" : 0
+      } ],
+      "metadata" : { }
+    },
+    "debugMode" : true,
+    "defaultConverterId" : {
+      "entityType" : "CONVERTER",
+      "id" : "373b9d90-23c7-11eb-8887-e94257e8a11b"
+    },
+    "downlinkConverterId" : {
+      "entityType" : "CONVERTER",
+      "id" : "f1b880f0-896e-11ea-82c8-230398f51544"
+    },
+    "edgeTemplate" : false,
+    "enabled" : true,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "INTEGRATION",
+      "id" : "ec6daec0-23c6-11eb-8887-e94257e8a11b"
+    },
+    "name" : "MCCI-Dust_TTS",
+    "remote" : false,
+    "routingKey" : "b3ece75d96bfcac137dd52eea9111bee",
+    "secret" : "tjz3bfvdwzvem3v9e08w",
+    "type" : "MQTT"
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "ec6daec0-23c6-11eb-8887-e94257e8a11b"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "9ece2fd0-a46f-11eb-ae1c-237b4a281e7a"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "ec6daec0-23c6-11eb-8887-e94257e8a11b"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "b2d54780-a6b7-11eb-83d0-6f8e6705505a"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "ec6daec0-23c6-11eb-8887-e94257e8a11b"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "33dcbe50-23cb-11eb-8887-e94257e8a11b"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "INTEGRATION",
+      "id" : "ec6daec0-23c6-11eb-8887-e94257e8a11b"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "5771eae0-b927-11ed-82b3-7f27f2c70179"
+    },
+    "type" : "ManagedByIntegration",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "{\"success\":true}",
+      "key" : "integration_status_ip-172-31-7-132",
+      "lastUpdateTs" : 1706116468329,
+      "longValue" : null,
+      "strValue" : null
+    } ]
+  }
+}

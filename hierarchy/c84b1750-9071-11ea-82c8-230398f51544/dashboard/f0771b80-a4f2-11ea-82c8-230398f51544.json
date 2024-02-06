@@ -1,0 +1,386 @@
+{
+  "entityType" : "DASHBOARD",
+  "entity" : {
+    "assignedCustomers" : null,
+    "configuration" : {
+      "widgets" : {
+        "7ae12b34-163a-e126-e8d7-c20fa0cfd79c" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "entities_hierarchy",
+          "type" : "latest",
+          "title" : "New widget",
+          "sizeX" : 7,
+          "sizeY" : 11,
+          "config" : {
+            "timewindow" : {
+              "realtime" : {
+                "interval" : 1000,
+                "timewindowMs" : 86400000
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "4px",
+            "settings" : {
+              "nodeRelationQueryFunction" : "/**\n\n// Function should return relations query object for current node used to fetch entity children.\n// Function can return 'default' string value. In this case default relations query will be used.\n\n// The following example code will construct simple relations query that will fetch relations of type 'Contains'\n// from the current entity.\n\nvar entity = nodeCtx.entity;\nvar query = {\n    parameters: {\n        rootId: entity.id.id,\n        rootType: entity.id.entityType,\n        direction: types.entitySearchDirection.from,\n        relationTypeGroup: \"COMMON\",\n        maxLevel: 1\n    },\n    filters: [{\n        relationType: \"Contains\",\n        entityTypes: []\n    }]\n};\nreturn query;\n\n**/\n",
+              "nodeHasChildrenFunction" : "/**\n\n// Function should return boolean value indicating whether current node has children (whether it can be expanded).\n\n// The following example code will restrict entities hierarchy expansion up to third level.\n\nreturn nodeCtx.level <= 2;\n\n// The next example code will restrict entities expansion according to the value of example 'nodeHasChildren' attribute.\n\nvar data = nodeCtx.data;\nif (data.hasOwnProperty('nodeHasChildren') && data['nodeHasChildren'] !== null) {\n    return data['nodeHasChildren'] === 'true';\n} else {\n    return true;\n}\n  \n**/\n ",
+              "nodeTextFunction" : "/**\n\n// Function should return text (can be HTML code) for the current node.\n\n// The following example code will generate node text consisting of entity name and temperature if temperature value is present in entity attributes/timeseries.\n\nvar data =  nodeCtx.data;\nvar entity = nodeCtx.entity;\nvar text = entity.name;\nif (data.hasOwnProperty('temperature') && data['temperature'] !== null) {\n    text += \" <b>\"+ data['temperature'] +\" °C</b>\";\n}\nreturn text;\n\n**/",
+              "nodeIconFunction" : "/** \n\n// Function should return node icon info object.\n// Resulting object should contain either 'materialIcon' or 'iconUrl' property. \n// Where:\n    - 'materialIcon' - name of the material icon to be used from the Material Icons Library (https://material.io/tools/icons);\n    - 'iconUrl' - url of the external image to be used as node icon.\n// Function can return 'default' string value. In this case default icons according to entity type will be used.\n\n// The following example code shows how to use external image for devices which name starts with 'Test' and use \n// default icons for the rest of entities.\n\nvar entity = nodeCtx.entity;\nif (entity.id.entityType === 'DEVICE' && entity.name.startsWith('Test')) {\n    return {iconUrl: 'https://avatars1.githubusercontent.com/u/14793288?v=4&s=117'};\n} else {\n    return 'default';\n}\n \n**/",
+              "nodeDisabledFunction" : "/**\n\n// Function should return boolean value indicating whether current node should be disabled (not selectable).\n\n// The following example code will disable current node according to the value of example 'nodeDisabled' attribute.\n\nvar data = nodeCtx.data;\nif (data.hasOwnProperty('nodeDisabled') && data['nodeDisabled'] !== null) {\n    return data['nodeDisabled'] === 'true';\n} else {\n    return false;\n}\n  \n**/\n",
+              "nodesSortFunction" : "/**\n\n// This function is used to sort nodes of the same level. Function should compare two nodes and return \n// integer value: \n//     - less than 0 - sort nodeCtx1 to an index lower than nodeCtx2\n//     - 0 - leave nodeCtx1 and nodeCtx2 unchanged with respect to each other\n//     - greater than 0 - sort nodeCtx2 to an index lower than nodeCtx1\n\n// The following example code will sort entities first by entity type in alphabetical order then\n// by entity name in alphabetical order.\n\nvar result = nodeCtx1.entity.id.entityType.localeCompare(nodeCtx2.entity.id.entityType);\nif (result === 0) {\n    result = nodeCtx1.entity.name.localeCompare(nodeCtx2.entity.name);\n}\nreturn result;\n  \n**/",
+              "nodeOpenedFunction" : "/**\n\n// Function should return boolean value indicating whether current node should be opened (expanded) when it first loaded.\n\n// The following example code will open by default nodes up to third level.\n\nreturn nodeCtx.level <= 2;\n\n**/\n "
+            },
+            "title" : "Hierarchy",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "datasources" : [ {
+              "type" : "entity",
+              "dataKeys" : [ ],
+              "entityAliasId" : "edfd387a-576b-dcec-6d2d-1cdc481b53c1"
+            } ],
+            "widgetStyle" : { },
+            "actions" : { },
+            "showTitleIcon" : false,
+            "titleIcon" : null,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "enableDataExport" : true,
+            "displayTimewindow" : true
+          },
+          "id" : "7ae12b34-163a-e126-e8d7-c20fa0cfd79c"
+        },
+        "8bb9d122-4d38-7b1d-a3f6-69f50589c4d7" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "entities_table",
+          "type" : "latest",
+          "title" : "New widget",
+          "sizeX" : 8,
+          "sizeY" : 11,
+          "config" : {
+            "timewindow" : {
+              "realtime" : {
+                "interval" : 1000,
+                "timewindowMs" : 86400000
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgb(0, 0, 0)",
+            "padding" : "4px",
+            "settings" : {
+              "enableSearch" : true,
+              "displayPagination" : false,
+              "defaultPageSize" : 4,
+              "displayEntityName" : true,
+              "displayEntityType" : false,
+              "displayEntityLabel" : false,
+              "entityLabelColumnTitle" : "Label",
+              "entitiesTitle" : "Customer Notifications - email & sms",
+              "entityNameColumnTitle" : "Customer",
+              "enableSelectColumnDisplay" : true,
+              "defaultSortOrder" : "entityName"
+            },
+            "title" : "New Entities table",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 800,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "datasources" : [ {
+              "type" : "entity",
+              "dataKeys" : [ {
+                "name" : "title",
+                "type" : "entityField",
+                "label" : "Title",
+                "color" : "#ffc107",
+                "settings" : {
+                  "columnWidth" : "0px",
+                  "useCellStyleFunction" : false,
+                  "cellStyleFunction" : "",
+                  "useCellContentFunction" : false,
+                  "cellContentFunction" : ""
+                },
+                "_hash" : 0.1777853586784759
+              } ],
+              "entityAliasId" : "fcd87f41-254e-7427-f801-9c51c47e1abb"
+            } ],
+            "showTitleIcon" : true,
+            "titleIcon" : "contacts",
+            "iconColor" : "rgb(15, 79, 15)",
+            "iconSize" : "24px",
+            "titleTooltip" : "Sensor - Entities Table",
+            "enableDataExport" : true,
+            "widgetStyle" : { },
+            "displayTimewindow" : true,
+            "actions" : {
+              "actionCellButton" : [ {
+                "id" : "18a2f477-d3cf-57a6-1865-b86bc1fb350f",
+                "name" : "Edit Email & SMS Notifications",
+                "icon" : "edit",
+                "type" : "customPretty",
+                "customHtml" : "<md-dialog aria-label=\"Edit entity\" style=\"width: 1200px\">\n    <form name=\"editCustomerForm\" ng-submit=\"vm.save()\">\n        <md-toolbar>\n            <div class=\"md-toolbar-tools\">\n                <h5>Edit Customer Notifications: {{vm.entityName}}</h5>\n                <span flex></span>\n                <md-button class=\"md-icon-button\" ng-click=\"vm.cancel()\">\n                    <ng-md-icon icon=\"close\" aria-label=\"Close\"></ng-md-icon>\n                </md-button>\n            </div>\n        </md-toolbar>\n                <span style=\"min-height: 3px;\" flex=\"\" ng-show=\"!$root.loading && !vm.loading\"></span>\n        <md-dialog-content>\n            <div class=\"md-dialog-content\">\n                <fieldset ng-disabled=\"$root.loading || vm.loading\">\n                    <div flex layout=\"row\">\n                        <md-input-container flex=\"100\" class=\"md-block\">\n                            <label>Email Notifications<br/>(format:  john@gmail.com, sue@gmail.com)</label>\n                            <input type=\"text\" name=\"email notification\" ng-model=\"vm.attributes.emailNotify\">\n                        </md-input-container>\n                    </div>\n                    <div flex layout=\"row\">\n                        <md-input-container flex=\"100\" class=\"md-block\">\n                            <label>Text Notifications<br/>(format:  5149991111, 5149992222)</label>\n                            <input type=\"text\"  name=\"text notification\" ng-model=\"vm.attributes.textNotify\">\n                        </md-input-container>\n                    </div>\n                            </fieldset>\n            </div>\n        </md-dialog-content>\n        <md-dialog-actions>\n            <md-button type=\"submit\" ng-disabled=\"vm.loading || editCustomerForm.$invalid || !editCustomerForm.$dirty\" class=\"md-raised md-primary\">Save</md-button>\n            <md-button ng-click=\"vm.cancel()\" class=\"md-primary\">Cancel</md-button>\n        </md-dialog-actions>\n    </form>\n</md-dialog>",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form md-input-container {\n    padding-right: 10px;\n}\n\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body md-autocomplete-wrap md-input-container {\n    height: 30px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n\n.relations-list.old-relations tb-entity-select tb-entity-autocomplete button {\n    display: none;\n} \n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form md-input-container {\n    padding-right: 10px;\n}\n\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body md-autocomplete-wrap md-input-container {\n    height: 30px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "var $injector = widgetContext.$scope.$injector;\r\nvar $mdDialog = $injector.get('$mdDialog'),\r\n    $document = $injector.get('$document'),\r\n    $q = $injector.get('$q'),\r\n    types = $injector.get('types'),\r\n    $rootScope = $injector.get('$rootScope'),\r\n    entityService = $injector.get('entityService'),\r\n    attributeService = $injector.get('attributeService'),\r\n    entityRelationService = $injector.get('entityRelationService');\r\n\r\nopenEditEntityDialog();\r\n\r\nfunction openEditEntityDialog() {\r\n    $mdDialog.show({\r\n        controller: ['$scope','$mdDialog', EditEntityDialogController],\r\n        controllerAs: 'vm',\r\n        template: htmlTemplate,\r\n        locals: {\r\n            entityId: entityId\r\n        },\r\n        parent: angular.element($document[0].body),\r\n        targetEvent: $event,\r\n        multiple: true,\r\n        clickOutsideToClose: false\r\n    });\r\n}\r\n\r\nfunction EditEntityDialogController($scope,$mdDialog) {\r\n    var vm = this;\r\n    vm.entityId = entityId;\r\n    vm.entityName = entityName;\r\n    vm.entityType = entityId.entityType;\r\n    vm.allowedEntityTypes = [types.entityType.asset, types.entityType.device];\r\n    vm.allowedRelatedEntityTypes = [];\r\n    vm.entitySearchDirection = types.entitySearchDirection;\r\n    vm.attributes = {};\r\n    vm.serverAttributes = {};\r\n    vm.relations = [];\r\n    vm.newRelations = [];\r\n    vm.relationsToDelete = [];\r\n    getEntityInfo();\r\n    \r\n    vm.addRelation = function() {\r\n        var relation = {\r\n            direction: null,\r\n            relationType: null,\r\n            relatedEntity: null\r\n        };\r\n        vm.newRelations.push(relation);\r\n        $scope.editEntityForm.$setDirty();\r\n    };\r\n    vm.removeRelation = function(index) {\r\n        if (index > -1) {\r\n            vm.newRelations.splice(index, 1);\r\n            $scope.editEntityForm.$setDirty();\r\n        }\r\n    };\r\n    vm.removeOldRelation = function(index, relation) {\r\n        if (index > -1) {\r\n            vm.relations.splice(index, 1);\r\n            vm.relationsToDelete.push(relation);\r\n            $scope.editEntityForm.$setDirty();\r\n        }\r\n    };\r\n    vm.save = function() {\r\n        saveAttributes();\r\n        saveRelations();\r\n        $scope.editEntityForm.$setPristine();\r\n    };\r\n    vm.cancel = function() {\r\n        $mdDialog.hide();\r\n    };\r\n    \r\n    function getEntityAttributes(attributes) {\r\n        for (var i = 0; i < attributes.length; i++) {\r\n              vm.attributes[attributes[i].key] = attributes[i].value; \r\n        }\r\n        vm.serverAttributes = angular.copy(vm.attributes);\r\n    }\r\n    \r\n    function getEntityRelations(relations) {\r\n        var relationsFrom = relations[0];\r\n        var relationsTo = relations[1];\r\n        for (var i=0; i < relationsFrom.length; i++) {\r\n            var relation = {\r\n                direction: types.entitySearchDirection.from,\r\n                relationType: relationsFrom[i].type,\r\n                relatedEntity: relationsFrom[i].to\r\n            };\r\n            vm.relations.push(relation);\r\n        }\r\n        for (var i=0; i < relationsTo.length; i++) {\r\n            var relation = {\r\n                direction: types.entitySearchDirection.to,\r\n                relationType: relationsTo[i].type,\r\n                relatedEntity: relationsTo[i].from\r\n            };\r\n            vm.relations.push(relation);\r\n        }\r\n    }\r\n    \r\n    function getEntityInfo() {\r\n        entityService.getEntity(entityId.entityType, entityId.id).then(\r\n            function(entity) {\r\n                vm.entity = entity;\r\n                vm.type = vm.entity.type;\r\n            });\r\n        attributeService.getEntityAttributesValues(entityId.entityType, entityId.id, 'SERVER_SCOPE').then(\r\n            function(data){\r\n                if (data.length) {\r\n                    getEntityAttributes(data);\r\n                }\r\n            });\r\n        $q.all([entityRelationService.findInfoByFrom(entityId.id, entityId.entityType), entityRelationService.findInfoByTo(entityId.id, entityId.entityType)]).then(\r\n            function(relations){\r\n                getEntityRelations(relations);\r\n            });\r\n    }\r\n    \r\n    function saveAttributes() {\r\n        var attributesArray = [];\r\n        for (var key in vm.attributes) {\r\n            if (vm.attributes[key] !== vm.serverAttributes[key]) {\r\n                attributesArray.push({key: key, value: vm.attributes[key]});\r\n            }\r\n        }\r\n        if (attributesArray.length > 0) {\r\n            attributeService.saveEntityAttributes(entityId.entityType, entityId.id, \"SERVER_SCOPE\", attributesArray);\r\n        } \r\n    }\r\n    \r\n    function saveRelations() {\r\n        var tasks = [];\r\n        for (var i=0; i < vm.newRelations.length; i++) {\r\n            var relation = {\r\n                type: vm.newRelations[i].relationType\r\n            };\r\n            if (vm.newRelations[i].direction == types.entitySearchDirection.from) {\r\n                relation.to = vm.newRelations[i].relatedEntity;\r\n                relation.from = entityId;\r\n            } else {\r\n                relation.to = entityId;\r\n                relation.from = vm.newRelations[i].relatedEntity;\r\n            }\r\n            tasks.push(entityRelationService.saveRelation(relation));\r\n        }\r\n        for (var i=0; i < vm.relationsToDelete.length; i++) {\r\n            var relation = {\r\n                type: vm.relationsToDelete[i].relationType\r\n            };\r\n            if (vm.relationsToDelete[i].direction == types.entitySearchDirection.from) {\r\n                relation.to = vm.relationsToDelete[i].relatedEntity;\r\n                relation.from = entityId;\r\n            } else {\r\n                relation.to = entityId;\r\n                relation.from = vm.relationsToDelete[i].relatedEntity;\r\n            }\r\n            tasks.push(entityRelationService.deleteRelation(relation.from.id, relation.from.entityType, relation.type, relation.to.id, relation.to.entityType));\r\n        }\r\n        $q.all(tasks).then(function(){\r\n            vm.relations = vm.relations.concat(vm.newRelations);\r\n            vm.newRelations = [];\r\n            vm.relationsToDelete = [];\r\n            updateAliasData();\r\n        });\r\n    }\r\n    \r\n    function updateAliasData() {\r\n        var aliasIds = [];\r\n        for (var id in widgetContext.aliasController.resolvedAliases) {\r\n            aliasIds.push(id);\r\n        }\r\n        var tasks = [];\r\n        aliasIds.forEach(function(aliasId) {\r\n            widgetContext.aliasController.setAliasUnresolved(aliasId);\r\n            tasks.push(widgetContext.aliasController.getAliasInfo(aliasId));\r\n        });\r\n        $q.all(tasks).then(function() {\r\n            $rootScope.$broadcast('entityAliasesChanged', aliasIds);\r\n        });\r\n    }\r\n}\r\n"
+              } ],
+              "rowDoubleClick" : [ ],
+              "headerButton" : [ ],
+              "rowClick" : [ {
+                "id" : "b99b98be-91b8-4f56-0076-663f8d30379c",
+                "name" : "update Hierarchy",
+                "icon" : "more_horiz",
+                "type" : "updateDashboardState",
+                "targetDashboardStateId" : null,
+                "setEntityId" : true
+              } ]
+            }
+          },
+          "id" : "8bb9d122-4d38-7b1d-a3f6-69f50589c4d7"
+        },
+        "c7f835b5-89f9-166a-7301-a7bc4f01e431" : {
+          "isSystemType" : true,
+          "bundleAlias" : "input_widgets",
+          "typeAlias" : "update_multiple_attributes",
+          "type" : "latest",
+          "title" : "New widget",
+          "sizeX" : 9,
+          "sizeY" : 11,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "dataKeys" : [ {
+                "name" : "emailNotify",
+                "type" : "attribute",
+                "label" : "Email Notifications",
+                "color" : "#2196f3",
+                "settings" : {
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "string",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "dataKeyHidden" : false,
+                  "step" : 1
+                },
+                "_hash" : 0.34578509781728206,
+                "units" : "Format: john@gmail.com, sue@gmail.com"
+              }, {
+                "name" : "textNotify",
+                "type" : "attribute",
+                "label" : "SMS Notifications",
+                "color" : "#4caf50",
+                "settings" : {
+                  "dataKeyType" : "server",
+                  "dataKeyValueType" : "string",
+                  "required" : false,
+                  "isEditable" : "editable",
+                  "dataKeyHidden" : false,
+                  "step" : 1
+                },
+                "_hash" : 0.9552820070922883,
+                "units" : "Format: 5149991234, 5149994321"
+              } ],
+              "entityAliasId" : "edfd387a-576b-dcec-6d2d-1cdc481b53c1"
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "showActionButtons" : true,
+              "showResultMessage" : true,
+              "fieldsAlignment" : "column",
+              "fieldsInRow" : 2,
+              "groupTitle" : "${entityName}",
+              "showGroupTitle" : true
+            },
+            "title" : "Notification Settings",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "enableDataExport" : true,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "showTitleIcon" : false,
+            "titleIcon" : null,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "displayTimewindow" : true
+          },
+          "id" : "c7f835b5-89f9-166a-7301-a7bc4f01e431"
+        }
+      },
+      "states" : {
+        "default" : {
+          "name" : "Test Customer Admin",
+          "root" : true,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "7ae12b34-163a-e126-e8d7-c20fa0cfd79c" : {
+                  "sizeX" : 7,
+                  "sizeY" : 11,
+                  "row" : 0,
+                  "col" : 17
+                },
+                "8bb9d122-4d38-7b1d-a3f6-69f50589c4d7" : {
+                  "sizeX" : 8,
+                  "sizeY" : 11,
+                  "row" : 0,
+                  "col" : 0
+                },
+                "c7f835b5-89f9-166a-7301-a7bc4f01e431" : {
+                  "sizeX" : 9,
+                  "sizeY" : 11,
+                  "row" : 0,
+                  "col" : 8
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "color" : "rgba(0,0,0,0.870588)",
+                "columns" : 24,
+                "margins" : [ 10, 10 ],
+                "backgroundSizeMode" : "100%",
+                "autoFillHeight" : true,
+                "mobileAutoFillHeight" : false,
+                "mobileRowHeight" : 70
+              }
+            }
+          }
+        }
+      },
+      "entityAliases" : {
+        "fcd87f41-254e-7427-f801-9c51c47e1abb" : {
+          "id" : "fcd87f41-254e-7427-f801-9c51c47e1abb",
+          "alias" : "Sub Customers",
+          "filter" : {
+            "type" : "entityGroup",
+            "resolveMultiple" : true,
+            "groupStateEntity" : false,
+            "stateEntityParamName" : null,
+            "defaultStateGroupType" : null,
+            "defaultStateEntityGroup" : null,
+            "groupType" : "CUSTOMER",
+            "entityGroup" : "c84e99c0-9071-11ea-82c8-230398f51544"
+          }
+        },
+        "edfd387a-576b-dcec-6d2d-1cdc481b53c1" : {
+          "id" : "edfd387a-576b-dcec-6d2d-1cdc481b53c1",
+          "alias" : "Update from State",
+          "filter" : {
+            "type" : "stateEntity",
+            "resolveMultiple" : false,
+            "stateEntityParamName" : null,
+            "defaultStateEntity" : {
+              "entityType" : "ASSET",
+              "id" : "43ce8780-12c4-11ea-a0b5-1fd3969e1b4d"
+            }
+          }
+        },
+        "10e81270-cb72-aac9-4db3-e0b6d2eed9f1" : {
+          "id" : "10e81270-cb72-aac9-4db3-e0b6d2eed9f1",
+          "alias" : "Customers",
+          "filter" : {
+            "type" : "entityGroup",
+            "resolveMultiple" : true,
+            "groupStateEntity" : false,
+            "stateEntityParamName" : null,
+            "defaultStateGroupType" : null,
+            "defaultStateEntityGroup" : null,
+            "groupType" : "CUSTOMER",
+            "entityGroup" : "ff893d40-d58d-11e9-8f5f-f518386fb8db"
+          }
+        }
+      },
+      "timewindow" : {
+        "displayValue" : "",
+        "selectedTab" : 0,
+        "hideInterval" : false,
+        "hideAggregation" : false,
+        "hideAggInterval" : false,
+        "realtime" : {
+          "interval" : 1000,
+          "timewindowMs" : 60000
+        },
+        "history" : {
+          "historyType" : 0,
+          "interval" : 1000,
+          "timewindowMs" : 60000,
+          "fixedTimewindow" : {
+            "startTimeMs" : 1588953198760,
+            "endTimeMs" : 1589039598760
+          }
+        },
+        "aggregation" : {
+          "type" : "AVG",
+          "limit" : 25000
+        }
+      },
+      "settings" : {
+        "stateControllerId" : "entity",
+        "showTitle" : false,
+        "showDashboardsSelect" : true,
+        "showEntitiesSelect" : true,
+        "showDashboardTimewindow" : true,
+        "showDashboardExport" : true,
+        "toolbarAlwaysOpen" : true
+      },
+      "description" : "To edit/add customer notification (if required)"
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "DASHBOARD",
+      "id" : "f0771b80-a4f2-11ea-82c8-230398f51544"
+    },
+    "image" : null,
+    "mobileHide" : true,
+    "mobileOrder" : null,
+    "name" : "Edit Sub-Customer Notification Settings",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "c84b1750-9071-11ea-82c8-230398f51544"
+    },
+    "title" : "Edit Sub-Customer Notification Settings"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

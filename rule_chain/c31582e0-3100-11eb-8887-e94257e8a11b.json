@@ -1,0 +1,273 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : null,
+    "configuration" : null,
+    "debugMode" : false,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "c319c8a0-3100-11eb-8887-e94257e8a11b"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "c31582e0-3100-11eb-8887-e94257e8a11b"
+    },
+    "name" : "New Create Inactivity Alarm",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 8,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 1,
+      "type" : "Created"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 3,
+      "type" : "Created"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 7,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 8,
+      "toIndex" : 6,
+      "type" : "True"
+    } ],
+    "firstNodeIndex" : 0,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "High Priority queue has longer timeout to accommodate for email sending delays",
+        "layoutX" : 301,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "queueName" : "HighPriority"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c319c8a0-3100-11eb-8887-e94257e8a11b"
+      },
+      "name" : "Move to HighPriority Queue",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbCheckpointNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 974,
+        "layoutY" : 420
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg;\r\nvar d = new Date(msg.createdTime);\r\nmetadata.alarmTime = d.toLocaleString();\r\n\r\nnewMsg = 'Inactivity detected for ' + metadata.originatorLabel + ' at ' + metadata.alarmTime+ '. For details goto: dcs.log5data.com';\r\n\r\n//if (metadata.tenant_phone)\r\n//   metadata.textNotify = metadata.tenant_phone;\r\n\r\nreturn {\r\n    msg: newMsg,\r\n    metadata: metadata,\r\n    msgType: msgType\r\n};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c31a3dd0-3100-11eb-8887-e94257e8a11b"
+      },
+      "name" : "Construct Mobile Notify",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 1274,
+        "layoutY" : 226
+      },
+      "configuration" : {
+        "useSystemSmtpSettings" : true,
+        "smtpHost" : "localhost",
+        "smtpPort" : 25,
+        "username" : null,
+        "password" : null,
+        "smtpProtocol" : "smtp",
+        "timeout" : 10000,
+        "enableTls" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c31a8bf0-3100-11eb-8887-e94257e8a11b"
+      },
+      "name" : "send email",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.mail.TbSendEmailNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 975,
+        "layoutY" : 225
+      },
+      "configuration" : {
+        "fromTemplate" : "support@log5data.com",
+        "toTemplate" : "${emailNotify}",
+        "ccTemplate" : null,
+        "bccTemplate" : null,
+        "subjectTemplate" : "Device ${originatorLabel} detected Inactive.",
+        "bodyTemplate" : "Device ${originatorLabel} detected Inactive after timeout."
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c31b0120-3100-11eb-8887-e94257e8a11b"
+      },
+      "name" : "Inactivity Email Alert",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.mail.TbMsgToEmailNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 700,
+        "layoutY" : 324
+      },
+      "configuration" : {
+        "alarmType" : "Inactivity Alarm",
+        "alarmDetailsBuildJs" : "var details = {};\r\ndetails.timeout = metadata.activityTimeout;\r\ndetails.label = metadata.originatorLabel;\r\n\r\nif (metadata.prevAlarmDetails) {\r\n    var prevDetails = JSON.parse(metadata.prevAlarmDetails);\r\n    details.count = prevDetails.count + 1;\r\n} else {\r\n    details.count = 1;\r\n}\r\n\r\nreturn details;",
+        "severity" : "MAJOR",
+        "propagate" : true,
+        "useMessageAlarmData" : false,
+        "relationTypes" : [ ]
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c31b4f40-3100-11eb-8887-e94257e8a11b"
+      },
+      "name" : "Create Inactivity Alarm",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "Notify to mobile",
+        "layoutX" : 1275,
+        "layoutY" : 419
+      },
+      "configuration" : {
+        "numbersTo" : "${textNotify}",
+        "numberFrom" : "+14387963478",
+        "accountSid" : "AC705ee3dc7460243ec1febeba7dd77bc5",
+        "accountToken" : "0de7867636e4d705c4c6f6a58c476aef"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c31b9d60-3100-11eb-8887-e94257e8a11b"
+      },
+      "name" : "Log5Data Notification",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.pe.twilio.TbTwilioSmsNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 425,
+        "layoutY" : 376
+      },
+      "configuration" : {
+        "dataMapping" : {
+          "label" : "originatorLabel"
+        },
+        "fetchTo" : "METADATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c31c1290-3100-11eb-8887-e94257e8a11b"
+      },
+      "name" : "Add Device Label",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetOriginatorFieldsNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 453,
+        "layoutY" : 489
+      },
+      "configuration" : {
+        "dataMapping" : {
+          "activity-emailNotify" : "emailNotify",
+          "activity-textNotify" : "textNotify"
+        },
+        "dataToFetch" : "ATTRIBUTES",
+        "fetchTo" : "METADATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c31c60b0-3100-11eb-8887-e94257e8a11b"
+      },
+      "name" : "Add Tenant email and text Notify Address",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetTenantAttributeNode"
+    }, {
+      "additionalInfo" : {
+        "description" : null,
+        "layoutX" : 362,
+        "layoutY" : 256
+      },
+      "configuration" : {
+        "originatorTypes" : [ "DEVICE" ]
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c31caed0-3100-11eb-8887-e94257e8a11b"
+      },
+      "name" : "Alarms for Devices only",
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbOriginatorTypeFilterNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}
