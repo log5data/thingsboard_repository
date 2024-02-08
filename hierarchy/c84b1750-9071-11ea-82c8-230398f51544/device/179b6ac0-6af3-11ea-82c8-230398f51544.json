@@ -73,7 +73,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "alarmsCount",
-      "lastUpdateTs" : 1707248877107,
+      "lastUpdateTs" : 1707436077098,
       "longValue" : 1,
       "strValue" : null
     }, {
@@ -81,7 +81,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "alarmsCountCriticalAck",
-      "lastUpdateTs" : 1707248877107,
+      "lastUpdateTs" : 1707436077098,
       "longValue" : 0,
       "strValue" : null
     }, {
@@ -89,7 +89,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "alarmsCountCriticalUnack",
-      "lastUpdateTs" : 1707248877107,
+      "lastUpdateTs" : 1707436077098,
       "longValue" : 0,
       "strValue" : null
     }, {
@@ -97,7 +97,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "alarmsCountMajorAck",
-      "lastUpdateTs" : 1707248877107,
+      "lastUpdateTs" : 1707436077098,
       "longValue" : 1,
       "strValue" : null
     }, {
@@ -105,7 +105,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "alarmsCountMajorUnack",
-      "lastUpdateTs" : 1707248877107,
+      "lastUpdateTs" : 1707436077098,
       "longValue" : 0,
       "strValue" : null
     }, {

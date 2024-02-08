@@ -1,0 +1,21 @@
+{
+  "entityType" : "WIDGETS_BUNDLE",
+  "entity" : {
+    "alias" : "dca",
+    "description" : null,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "WIDGETS_BUNDLE",
+      "id" : "f81d9560-8406-11ea-82c8-230398f51544"
+    },
+    "image" : null,
+    "name" : "DCA",
+    "order" : null,
+    "title" : "DCA"
+  },
+  "fqns" : [ "dca.image_map" ],
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

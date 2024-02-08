@@ -68,7 +68,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "activeDevices",
-      "lastUpdateTs" : 1707195608856,
+      "lastUpdateTs" : 1707368409705,
       "longValue" : 2,
       "strValue" : null
     }, {
@@ -76,7 +76,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "alarmsCount",
-      "lastUpdateTs" : 1707248877174,
+      "lastUpdateTs" : 1707436085180,
       "longValue" : 0,
       "strValue" : null
     }, {
@@ -84,7 +84,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "alarmsCountCriticalAck",
-      "lastUpdateTs" : 1707248877174,
+      "lastUpdateTs" : 1707436085180,
       "longValue" : 0,
       "strValue" : null
     }, {
@@ -92,7 +92,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "alarmsCountCriticalUnack",
-      "lastUpdateTs" : 1707248877174,
+      "lastUpdateTs" : 1707436085180,
       "longValue" : 0,
       "strValue" : null
     }, {
@@ -100,7 +100,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "alarmsCountMajorAck",
-      "lastUpdateTs" : 1707248877174,
+      "lastUpdateTs" : 1707436085180,
       "longValue" : 0,
       "strValue" : null
     }, {
@@ -108,7 +108,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "alarmsCountMajorUnack",
-      "lastUpdateTs" : 1707248877174,
+      "lastUpdateTs" : 1707436085180,
       "longValue" : 0,
       "strValue" : null
     }, {

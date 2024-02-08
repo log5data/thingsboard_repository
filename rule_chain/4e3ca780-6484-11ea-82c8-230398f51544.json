@@ -780,8 +780,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1561,
-        "layoutY" : 292,
+        "layoutX" : 1588,
+        "layoutY" : 239,
         "ruleChainNodeId" : "rule-chain-node-26"
       },
       "configuration" : {

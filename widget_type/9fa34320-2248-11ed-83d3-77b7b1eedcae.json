@@ -1,0 +1,32 @@
+{
+  "entityType" : "WIDGET_TYPE",
+  "entity" : {
+    "fqn" : "trendz_bundle.trendz_view_static",
+    "name" : "Trendz View Static",
+    "deprecated" : false,
+    "image" : null,
+    "description" : null,
+    "descriptor" : {
+      "type" : "static",
+      "sizeX" : 9.5,
+      "sizeY" : 6.5,
+      "resources" : [ ],
+      "templateHtml" : "<iframe class=\"iFrameWindo\"\n        *ngIf=\"finalIframeUrl\"\n>\n    Your browser doesn't support iFrames.\n</iframe>\n\n<div *ngIf=\"!finalIframeUrl\" class=\"center-scree\">Static Trendz View</div>\n\n<div class=\"iFrameEdit\" *ngIf=\"ctx.isEdit\">\n    \n</div>",
+      "templateCss" : ".iFrameWindo {\n    border: 0; \n    width: 100%; \n    height: 100%\n}\n\n.iFrameEdit {\n    border: 0; \n    width: 100%; \n    height: 100%;\n    position: absolute;\n    top: 0;\n    left: 0;\n}\n\n.center-scree {\n    width: 100%; \n    height: 100%;\n    border: 0; \n    text-align: center;\n    font-size: 40px;\n}",
+      "controllerScript" : "let $scope;\nlet $sce;\nlet userService;\nlet $timeout;\nlet iframe;\nlet startTime = 0;\nlet endTime = 0;\nlet settings;\n\nself.actionSources = function () {\n  return {\n    'rowClick': {\n      name: 'widget-action.row-click',\n      multiple: false\n    }\n  };\n}\n\nself.onInit = function () {\n  $scope = self.ctx.$scope;\n  $scope.ctx = self.ctx;\n\n  settings = JSON.parse(JSON.stringify(self.ctx.settings)) || {};\n  $scope.originalIframeUrl = settings.viewUrl;\n\n  if (settings.useDashboardTimeWindow) {\n    self.ctx.dashboard.dashboardTimewindowChangedSubject.subscribe(ll => {\n        updateTimeRange();\n    });\n    updateTimeRange();\n  } else {\n    buildViewUrl();\n  }\n\n  listenForChildMsgs();\n  self.onResize();\n}\n\nself.onDataUpdated = function () {\n\n}\n\nself.onResize = function () {\n\n}\n\nself.onDestroy = function () {\n\n}\n\nfunction buildViewUrl() {\n  $scope.tokenParam = getTokenUrlParams();\n  if ($scope.originalIframeUrl && $scope.originalIframeUrl !== 'http://localhost:4200/viewMode/{id}/') {\n    $scope.finalIframeUrl = $scope.originalIframeUrl + `?${$scope.tokenParam}`;\n  }\n  if (settings.useDashboardTimeWindow && startTime !== 0 && endTime !== 0) {\n    $scope.finalIframeUrl = $scope.finalIframeUrl + '&startTs=' + startTime + \"&endTs=\" + endTime;\n  }\n\n  setTimeout(() => {\n    iframe = self.ctx.$container.find('iframe');\n    iframe.attr('src', $scope.finalIframeUrl);\n  }, 10);\n}\n\nfunction getTokenUrlParams() {\n  let jwtToken = localStorage.getItem('jwt_token');\n  if (jwtToken) {\n    jwtToken = jwtToken.replaceAll('\"', \"\");\n  }\n\n  let refrToekn = localStorage.getItem('refresh_token');\n  if (refrToekn) {\n    refrToekn = refrToekn.replaceAll('\"', \"\");\n  }\n\n  return 'token=' + jwtToken + '&refreshToken=' + refrToekn;\n}\n\nfunction updateTimeRange() {\n  let timeWindow = $scope.ctx.dashboard.dashboardTimewindow;\n  if (timeWindow.realtime) {\n    startTime = Date.now() - timeWindow.realtime.timewindowMs;\n    endTime = Date.now();\n  } else if (timeWindow.history) {\n    if (timeWindow.history.fixedTimewindow && timeWindow.history.historyType === 1) {\n      startTime = timeWindow.history.fixedTimewindow.startTimeMs;\n      endTime = timeWindow.history.fixedTimewindow.endTimeMs;\n    } else if (timeWindow.history.timewindowMs && timeWindow.history.historyType === 0) {\n      startTime = Date.now() - timeWindow.history.timewindowMs;\n      endTime = Date.now();\n    }\n  }\n  buildViewUrl();\n}\n\nfunction listenForChildMsgs() {\n  window.addEventListener('message', function (e) {\n    if (e.data && e.data.type === 'trndChildMsgConfirm') {\n      console.log('confirmation from Child iFrame received', e.data);\n      if (postCommandId === e.data.cmdId) {\n        transferFinished = true;\n      }\n    } else if (e.data && e.data.type === 'entityItemSelected') {\n      let rowClickDescriptors = $scope.ctx.actionsApi.getActionDescriptors('rowClick');\n      console.log('child entity selected', e.data, rowClickDescriptors);\n      if (rowClickDescriptors.length) {\n        let entityId = e.data.innerData.entityId;\n        let entityName = e.data.innerData.entityName;\n        if (entityId) {\n          setTimeout(() => {\n            console.log('descriptor called', entityId, entityName);\n            $scope.ctx.actionsApi.handleWidgetAction(null, rowClickDescriptors[0], entityId, entityName);\n          }, 0);\n        }\n      }\n    } else {\n      console.log('child strange', e.data);\n    }\n  });\n}\n\nfunction getDescendantProp(obj, path) {\n  return path.split('.').reduce((acc, part) => acc && acc[part], obj\n)\n}\n",
+      "settingsSchema" : "{\n    \"schema\": {\n        \"type\": \"object\",\n        \"title\": \"EntitiesTableSettings\",\n        \"properties\": {\n            \"viewUrl\": {\n                \"title\": \"View URL\",\n                \"type\": \"string\",\n                \"default\": \"http://localhost:4200/viewMode/{id}/\"\n            },\n            \"useDashboardTimeWindow\": {\n                \"title\": \"Use Dashboard Time Window\",\n                \"type\": \"boolean\",\n                \"default\": false\n            }\n        },\n        \"required\": []\n    },\n    \"form\": [\n        \"viewUrl\",\n        \"useDashboardTimeWindow\"\n    ]\n}",
+      "dataKeySettingsSchema" : "{}\n",
+      "defaultConfig" : "{\"datasources\":[{\"type\":\"static\",\"name\":\"function\",\"dataKeys\":[{\"name\":\"f(x)\",\"type\":\"function\",\"label\":\"Random\",\"color\":\"#2196f3\",\"settings\":{},\"_hash\":0.15479322438769105,\"funcBody\":\"var value = prevValue + Math.random() * 100 - 50;\\nvar multiplier = Math.pow(10, 2 || 0);\\nvar value = Math.round(value * multiplier) / multiplier;\\nif (value < -1000) {\\n\\tvalue = -1000;\\n} else if (value > 1000) {\\n\\tvalue = 1000;\\n}\\nreturn value;\"}]}],\"timewindow\":{\"realtime\":{\"timewindowMs\":60000}},\"showTitle\":true,\"backgroundColor\":\"#fff\",\"color\":\"rgba(0, 0, 0, 0.87)\",\"padding\":\"8px\",\"settings\":{},\"title\":\"Trendz View Static\"}"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "WIDGET_TYPE",
+      "id" : "9fa34320-2248-11ed-83d3-77b7b1eedcae"
+    },
+    "tags" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

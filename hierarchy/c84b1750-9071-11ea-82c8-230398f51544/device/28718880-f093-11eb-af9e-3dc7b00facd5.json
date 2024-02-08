@@ -85,7 +85,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "alarmsCount",
-      "lastUpdateTs" : 1707248877401,
+      "lastUpdateTs" : 1707436079186,
       "longValue" : 0,
       "strValue" : null
     }, {
@@ -93,7 +93,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "alarmsCountCriticalAck",
-      "lastUpdateTs" : 1707248877401,
+      "lastUpdateTs" : 1707436079186,
       "longValue" : 0,
       "strValue" : null
     }, {
@@ -101,7 +101,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "alarmsCountCriticalUnack",
-      "lastUpdateTs" : 1707248877401,
+      "lastUpdateTs" : 1707436079186,
       "longValue" : 0,
       "strValue" : null
     }, {
@@ -109,7 +109,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "alarmsCountMajorAck",
-      "lastUpdateTs" : 1707248877401,
+      "lastUpdateTs" : 1707436079186,
       "longValue" : 0,
       "strValue" : null
     }, {
@@ -117,7 +117,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "alarmsCountMajorUnack",
-      "lastUpdateTs" : 1707248877401,
+      "lastUpdateTs" : 1707436079186,
       "longValue" : 0,
       "strValue" : null
     }, {
@@ -141,7 +141,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "inactivityTimeout",
-      "lastUpdateTs" : 1707246528926,
+      "lastUpdateTs" : 1707433726413,
       "longValue" : 36000000,
       "strValue" : null
     }, {
@@ -149,23 +149,23 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "lastActivityTime",
-      "lastUpdateTs" : 1707246528907,
-      "longValue" : 1707246528902,
+      "lastUpdateTs" : 1707433726401,
+      "longValue" : 1707433726395,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "miss_fcnt_sum_daily",
-      "lastUpdateTs" : 1707195609836,
-      "longValue" : 0,
+      "lastUpdateTs" : 1707368411025,
+      "longValue" : 1,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "reportingFreq",
-      "lastUpdateTs" : 1707246528926,
+      "lastUpdateTs" : 1707433726413,
       "longValue" : 3600,
       "strValue" : null
     }, {
@@ -173,8 +173,8 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "uplink_counts",
-      "lastUpdateTs" : 1707195609915,
-      "longValue" : 24,
+      "lastUpdateTs" : 1707368411112,
+      "longValue" : 23,
       "strValue" : null
     }, {
       "booleanValue" : null,

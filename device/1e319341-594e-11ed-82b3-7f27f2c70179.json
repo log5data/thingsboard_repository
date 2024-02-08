@@ -70,40 +70,40 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "inactivityTimeout",
-      "lastUpdateTs" : 1707169854388,
-      "longValue" : 36000000,
+      "lastUpdateTs" : 1707432637002,
+      "longValue" : 288000000,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "lastActivityTime",
-      "lastUpdateTs" : 1707238253553,
-      "longValue" : 1707238253547,
+      "lastUpdateTs" : 1707432636980,
+      "longValue" : 1707432636976,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "miss_fcnt_sum_daily",
-      "lastUpdateTs" : 1707195609971,
-      "longValue" : 15,
+      "lastUpdateTs" : 1707368410955,
+      "longValue" : 18,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "reportingFreq",
-      "lastUpdateTs" : 1707169854388,
-      "longValue" : 3600,
+      "lastUpdateTs" : 1707432637002,
+      "longValue" : 28800,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "uplink_counts",
-      "lastUpdateTs" : 1707195609971,
-      "longValue" : 9,
+      "lastUpdateTs" : 1707368411112,
+      "longValue" : 8,
       "strValue" : null
     } ],
     "SHARED_SCOPE" : [ ]

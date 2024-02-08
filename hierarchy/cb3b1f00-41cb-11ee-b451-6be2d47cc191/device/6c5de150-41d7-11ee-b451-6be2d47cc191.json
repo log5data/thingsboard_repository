@@ -57,11 +57,11 @@
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ {
-      "booleanValue" : true,
+      "booleanValue" : false,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "active",
-      "lastUpdateTs" : 1693606867455,
+      "lastUpdateTs" : 1707392833879,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -125,15 +125,15 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "inactivityAlarmTime",
-      "lastUpdateTs" : 1693421882555,
-      "longValue" : 1693421882555,
+      "lastUpdateTs" : 1707392833879,
+      "longValue" : 1707392833879,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "inactivityTimeout",
-      "lastUpdateTs" : 1707248027740,
+      "lastUpdateTs" : 1707320026237,
       "longValue" : 72000000,
       "strValue" : null
     }, {
@@ -141,8 +141,8 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "lastActivityTime",
-      "lastUpdateTs" : 1707248436925,
-      "longValue" : 1707248436921,
+      "lastUpdateTs" : 1707320786853,
+      "longValue" : 1707320786849,
       "strValue" : null
     }, {
       "booleanValue" : true,
@@ -165,7 +165,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "miss_fcnt_sum_daily",
-      "lastUpdateTs" : 1707195609918,
+      "lastUpdateTs" : 1707368410956,
       "longValue" : 0,
       "strValue" : null
     }, {
@@ -173,7 +173,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "reportingFreq",
-      "lastUpdateTs" : 1707248027740,
+      "lastUpdateTs" : 1707320026237,
       "longValue" : 7200,
       "strValue" : null
     }, {
@@ -221,8 +221,8 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "uplink_counts",
-      "lastUpdateTs" : 1707195609823,
-      "longValue" : 12,
+      "lastUpdateTs" : 1707368411106,
+      "longValue" : 6,
       "strValue" : null
     } ],
     "SHARED_SCOPE" : [ ]
